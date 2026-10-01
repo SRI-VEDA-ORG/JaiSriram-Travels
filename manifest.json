@@ -1,0 +1,79 @@
+{
+  "name": "Jai Sriram Tours & Travels | జై శ్రీరామ్ టూర్స్ & ట్రావెల్స్",
+  "short_name": "Jai Sriram",
+  "description": "Jai Sriram Tours & Travels — Chintalacheruvu Village, Chagalamarri Mandal, Nandyal Dist. 30+ Years Sacred Pilgrimage & Luxury Bus Seat Booking App.",
+  "id": "/?app=jai-sriram-travels",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "background_color": "#fafaf9",
+  "theme_color": "#ea580c",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": [
+    "travel",
+    "navigation",
+    "lifestyle"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/jai-sriram-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/jai-sriram-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Bus Seat / Berth",
+      "short_name": "Book Seat",
+      "description": "Select Sleeper Berths or Push-back Seats online",
+      "url": "./index.html#booking-engine",
+      "icons": [
+        {
+          "src": "icons/jai-sriram-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Upcoming Tours (4 Buses)",
+      "short_name": "Tours",
+      "description": "View Tirumala, Arunachalam, Srisailam & Sabarimala buses",
+      "url": "./index.html#upcoming-tours",
+      "icons": [
+        {
+          "src": "icons/jai-sriram-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Admin Approval Panel",
+      "short_name": "Admin",
+      "description": "Approve or reject pending passenger seats",
+      "url": "./index.html#admin-panel",
+      "icons": [
+        {
+          "src": "icons/jai-sriram-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
