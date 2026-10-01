@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jai Sriram Tours & Travels | జై శ్రీరామ్ టూర్స్ & ట్రావెల్స్</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- English Fonts: Roboto, Roboto Slab, Orbitron (Robotic), Share Tech Mono | Telugu Stylish Fonts: Ramabhadra, Suranna, Mandali, Noto Sans Telugu -->
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=Ramabhadra&family=Roboto+Slab:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Share+Tech+Mono&family=Suranna&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron-primary: #d97706;
+            --saffron-deep: #9a3412;
+            --gold-soft: #fef3c7;
+        }
+
+        /* Default English Typography: Roboto + Roboto Slab + Robotic Orbitron */
+        body.lang-en {
+            font-family: 'Roboto', 'Roboto Slab', sans-serif;
+            font-size: 12.5px;
+            line-height: 1.5;
+            letter-spacing: 0.015em;
+        }
+
+        body.lang-en .font-heading {
+            font-family: 'Roboto Slab', 'Orbitron', serif;
+            letter-spacing: 0.03em;
+        }
+
+        body.lang-en .font-robotic {
+            font-family: 'Orbitron', 'Share Tech Mono', monospace;
+            letter-spacing: 0.06em;
+        }
+
+        body.lang-en .font-slab {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        /* Stylish Telugu Typography: Mandali + Ramabhadra + Suranna */
+        body.lang-te {
+            font-family: 'Mandali', 'Noto Sans Telugu', sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        body.lang-te .font-heading {
+            font-family: 'Ramabhadra', 'Suranna', 'Noto Sans Telugu', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        body.lang-te .font-robotic {
+            font-family: 'Ramabhadra', 'Noto Sans Telugu', sans-serif;
+        }
+
+        body.lang-te .font-slab {
+            font-family: 'Suranna', 'Ramabhadra', serif;
+            font-size: 1.08em;
+        }
+
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Seat & Berth interactive animations */
+        .seat-item {
+            transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .seat-item:hover:not(:disabled) {
+            transform: translateY(-2px);
+        }
+        .pulse-amber {
+            animation: pulseAmber 2s infinite;
+        }
+        @keyframes pulseAmber {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45); }
+            50% { box-shadow: 0 0 0 5px rgba(245, 158, 11, 0); }
+        }
+    </style>
+</head>
+<body class="lang-en bg-stone-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-amber-200/70 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 sm:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+            <!-- Brand Logo & Title -->
+            <a href="#hero" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-500 flex items-center justify-center shadow-md shadow-orange-500/20 border border-amber-300 group-hover:scale-105 transition">
+                    <!-- Custom Sacred Emblem SVG -->
+                    <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-robotic text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-orange-100 text-orange-800 border border-orange-200" data-i18n="omSriRam">OM SRI RAM</span>
+                        <span class="font-robotic text-[10px] text-slate-400 font-semibold">ESTD. 1996</span>
+                    </div>
+                    <h1 class="font-heading text-sm sm:text-base font-extrabold text-slate-900 tracking-tight leading-tight" data-i18n="brandShort">JAI SRIRAM TRAVELS</h1>
+                </div>
+            </a>
+
+            <!-- Navigation Buttons -->
+            <nav class="flex items-center flex-wrap gap-1 sm:gap-1.5">
+                <a href="#booking-engine" class="font-robotic px-2.5 py-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 text-white font-bold text-[11px] shadow-sm hover:opacity-95 transition flex items-center gap-1">
+                    <span>⚡</span>
+                    <span data-i18n="navBookNow">BOOK NOW</span>
+                </a>
+                <a href="#upcoming-tours" class="font-slab px-2 py-1 rounded-lg text-slate-700 hover:bg-amber-50 hover:text-orange-700 font-semibold text-[11px] transition" data-i18n="navUpcoming">UPCOMING TOURS</a>
+                <a href="#packages" class="font-slab px-2 py-1 rounded-lg text-slate-700 hover:bg-amber-50 hover:text-orange-700 font-semibold text-[11px] transition" data-i18n="navPackages">PACKAGES</a>
+                <a href="#tourist-places" class="font-slab px-2 py-1 rounded-lg text-slate-700 hover:bg-amber-50 hover:text-orange-700 font-semibold text-[11px] transition" data-i18n="navPlaces">OUR TOURIST PLACES</a>
+                <a href="#contact" class="font-slab px-2 py-1 rounded-lg text-slate-700 hover:bg-amber-50 hover:text-orange-700 font-semibold text-[11px] transition" data-i18n="navContact">CONTACT</a>
+
+                <!-- Admin Quick Button with Live Pending Counter -->
+                <a href="#admin-panel" class="font-robotic px-2 py-1 rounded-lg bg-slate-900 text-amber-300 hover:bg-slate-800 font-semibold text-[11px] transition flex items-center gap-1">
+                    <span data-i18n="navAdmin">ADMIN</span>
+                    <span id="header-pending-badge" class="px-1.5 py-0.2 rounded-full bg-amber-500 text-slate-950 font-extrabold text-[10px]">1</span>
+                </a>
+
+                <!-- Language Switcher: Default ENG, Clickable తెలుగు -->
+                <div class="inline-flex items-center rounded-lg p-0.5 bg-slate-900 border border-slate-700 ml-1 shadow-xs">
+                    <button id="btn-lang-en" onclick="setLanguage('en')" class="font-robotic px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-orange-500 text-white shadow-sm transition">ENG</button>
+                    <button id="btn-lang-te" onclick="setLanguage('te')" class="px-2.5 py-0.5 rounded-md text-[11px] font-bold text-amber-200 hover:text-white transition">తెలుగు</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container with Generous Whitespace & Compact Aesthetic -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-10 py-6 space-y-10">
+
+        <section id="hero" class="relative rounded-2xl bg-gradient-to-br from-white via-amber-50/40 to-orange-50/30 border border-amber-200/80 p-5 sm:p-7 shadow-sm overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-36 h-36 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+                <div class="space-y-2.5 max-w-xl">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-orange-100/80 border border-orange-300/70 text-orange-900 text-[11px] font-semibold">
+                        <span>🚩</span>
+                        <span class="font-slab" data-i18n="heroBadge">CHINTALACHERUVU VILLAGE, CHAGALAMARRI MANDAL, NANDYAL DIST.</span>
+                    </div>
+
+                    <h2 class="font-heading text-lg sm:text-2xl font-extrabold text-slate-900 leading-snug" data-i18n="heroTitle">
+                        JAI SRIRAM TOURS & TRAVELS
+                    </h2>
+
+                    <p class="text-xs text-slate-600 leading-relaxed" data-i18n="heroDesc">
+                        Serving pilgrims and travelers for the last 30+ years (since 1996) with safe, punctual, and comfortable sleeper & seater luxury coaches. Over 60,000+ devotees have completed sacred tours with glowing positive feedback.
+                    </p>
+
+                    <!-- Pickup Hubs Banner -->
+                    <div class="pt-1">
+                        <p class="font-slab text-[11px] font-bold text-orange-800 uppercase tracking-wider mb-1.5" data-i18n="pickupTitle">
+                            🚌 DIRECT BUS PICKUP ACROSS ENTIRE NANDYAL DISTRICT & NEARBY HUBS:
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-slate-800 text-[11px] font-semibold shadow-2xs" data-i18n="hub1">📍 Chintalacheruvu & Chagalamarri</span>
+                            <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-slate-800 text-[11px] font-semibold shadow-2xs" data-i18n="hub2">📍 Allagadda</span>
+                            <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-slate-800 text-[11px] font-semibold shadow-2xs" data-i18n="hub3">📍 Nandyal Town</span>
+                            <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-slate-800 text-[11px] font-semibold shadow-2xs" data-i18n="hub4">📍 Mydukur</span>
+                            <span class="px-2 py-0.5 rounded-md bg-white border border-amber-300 text-slate-800 text-[11px] font-semibold shadow-2xs" data-i18n="hub5">📍 Proddatur</span>
+                            <span class="px-2 py-0.5 rounded-md bg-orange-600 text-white text-[11px] font-bold" data-i18n="hub6">✨ Entire Nandyal Dist. Pickup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compact Legacy Metric Cards -->
+                <div class="grid grid-cols-2 gap-2 w-full md:w-60 shrink-0">
+                    <div class="p-3 rounded-xl bg-white border border-slate-200/80 text-center shadow-2xs">
+                        <div class="font-robotic text-lg font-extrabold text-orange-600">30+</div>
+                        <div class="font-slab text-[10px] text-slate-500 font-semibold" data-i18n="statYears">YEARS OF SERVICE</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200/80 text-center shadow-2xs">
+                        <div class="font-robotic text-lg font-extrabold text-emerald-600">60,000+</div>
+                        <div class="font-slab text-[10px] text-slate-500 font-semibold" data-i18n="statPilgrims">HAPPY PILGRIMS</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200/80 text-center shadow-2xs">
+                        <div class="font-robotic text-lg font-extrabold text-amber-600">850+</div>
+                        <div class="font-slab text-[10px] text-slate-500 font-semibold" data-i18n="statTours">TOURS COMPLETED</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200/80 text-center shadow-2xs">
+                        <div class="font-robotic text-lg font-extrabold text-blue-600">4.9 ★</div>
+                        <div class="font-slab text-[10px] text-slate-500 font-semibold" data-i18n="statRating">POSITIVE RATING</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Positive Customer Feedback Ticker Strip -->
+            <div class="mt-4 pt-3 border-t border-amber-200/60 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-600">
+                <div class="flex items-center gap-1.5">
+                    <span class="font-robotic px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]" data-i18n="feedbackTag">PILGRIM FEEDBACK</span>
+                    <span id="feedback-quote" class="italic text-slate-700" data-i18n="feedback1">"Our Arunachalam & Rameswaram yatra from Chagalamarri was super comfortable. Homely food & neat stay!" — Ramasubba Reddy, Allagadda</span>
+                </div>
+                <a href="#upcoming-tours" class="font-robotic text-orange-700 font-bold hover:underline text-[11px]" data-i18n="exploreBusesLink">VIEW BUSES & SEATS →</a>
+            </div>
+        </section>
+
+        <section id="upcoming-tours" class="space-y-3">
+            <div class="flex flex-wrap items-end justify-between gap-2 border-b border-slate-200 pb-2">
+                <div>
+                    <span class="font-robotic text-[10px] font-bold uppercase tracking-widest text-orange-600" data-i18n="sec2Sub">LIVE BUS FLEET • 2x2 GRID</span>
+                    <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900" data-i18n="sec2Title">UPCOMING TOURS (SELECT BUS TO BOOK)</h3>
+                </div>
+                <p class="text-[11px] text-slate-500" data-i18n="sec2Hint">Click 'Select & View Seats' on any of the 4 buses below to view Berths & Seaters</p>
+            </div>
+
+            <!-- 2x2 Bus Grid (Left Bus, Right Bus, Down-Left Bus, Down-Right Bus) -->
+            <div id="bus-grid-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </section>
+
+        <section id="booking-engine" class="rounded-2xl bg-white border border-slate-200/90 shadow-sm p-4 sm:p-6 space-y-5">
+            <!-- Selected Bus Top Summary Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span id="active-bus-code" class="font-robotic px-2 py-0.5 rounded bg-orange-600 text-white text-[10px] font-bold">TOP-LEFT BUS (BUS 1)</span>
+                        <span id="active-bus-date" class="text-[11px] font-semibold text-slate-500"></span>
+                    </div>
+                    <h3 id="active-bus-title" class="font-heading text-sm sm:text-base font-bold text-slate-900 mt-0.5"></h3>
+                </div>
+
+                <!-- Live Seat Counter Pills -->
+                <div class="flex flex-wrap items-center gap-2 text-[11px]">
+                    <div class="px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold">
+                        <span data-i18n="lblAvailable">Available:</span> <span id="count-available" class="font-robotic">0</span>
+                    </div>
+                    <div class="px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-300 text-amber-800 font-bold">
+                        <span data-i18n="lblPending">Pending Admin:</span> <span id="count-pending" class="font-robotic">0</span>
+                    </div>
+                    <div class="px-2.5 py-1 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 font-bold">
+                        <span data-i18n="lblBooked">Booked:</span> <span id="count-booked" class="font-robotic">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="flex flex-wrap items-center justify-between gap-2 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200/60 text-[11px]">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 font-semibold text-slate-700">
+                        <span class="w-3.5 h-3.5 rounded bg-white border-2 border-emerald-500 inline-block"></span>
+                        <span data-i18n="legAvail">Available</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 font-semibold text-slate-700">
+                        <span class="w-3.5 h-3.5 rounded bg-orange-600 border-2 border-orange-700 inline-block"></span>
+                        <span data-i18n="legSelected">Selected</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 font-semibold text-slate-700">
+                        <span class="w-3.5 h-3.5 rounded bg-amber-100 border-2 border-amber-500 inline-block"></span>
+                        <span data-i18n="legPending">Pending Approval</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 font-semibold text-slate-700">
+                        <span class="w-3.5 h-3.5 rounded bg-rose-100 border-2 border-rose-400 inline-block"></span>
+                        <span data-i18n="legBooked">Confirmed Booked</span>
+                    </span>
+                </div>
+                <span class="text-[10px] text-slate-500" data-i18n="legClickHint">Tap any available Seat or Berth to select</span>
+            </div>
+
+            <!-- Two-Column Layout: Left = Separate Berths & Seats Deck | Right = Booking & Online Payment Form -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+                <!-- Left 7 Cols: Separate Sleeper Berths & Seater Seats Decks -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- DECK 1: SLEEPER BERTHS (SEPARATE VIEW) -->
+                    <div class="p-3.5 rounded-xl bg-stone-50/90 border border-slate-200 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-1.5">
+                                <span class="font-robotic px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold text-[10px]">🛏️ BERTH DECK</span>
+                                <h4 class="font-slab font-bold text-xs text-slate-800" data-i18n="berthSectionTitle">SLEEPER BERTHS (SEPARATE UPPER/LOWER DECK)</h4>
+                            </div>
+                            <span id="berth-price-tag" class="font-robotic text-[11px] font-extrabold text-indigo-700"></span>
+                        </div>
+                        <p class="text-[10px] text-slate-500" data-i18n="berthSubNote">Full-length cushioned sleeper berths ideal for elders & night journeys (B1 - B12)</p>
+
+                        <!-- Berths Grid (12 Berths: 3 rows x 4 columns) -->
+                        <div id="berths-container" class="grid grid-cols-3 sm:grid-cols-4 gap-2 pt-1">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- DECK 2: SEATER SEATS (SEPARATE VIEW) -->
+                    <div class="p-3.5 rounded-xl bg-stone-50/90 border border-slate-200 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-1.5">
+                                <span class="font-robotic px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">💺 SEATER DECK</span>
+                                <h4 class="font-slab font-bold text-xs text-slate-800" data-i18n="seatSectionTitle">PUSH-BACK SEATER SEATS (SEPARATE DECK)</h4>
+                            </div>
+                            <span id="seat-price-tag" class="font-robotic text-[11px] font-extrabold text-emerald-700"></span>
+                        </div>
+                        <p class="text-[10px] text-slate-500" data-i18n="seatSubNote">2x2 Luxury ergonomic push-back seats (S1 - S20)</p>
+
+                        <!-- Seats Grid (20 Seats: 5 rows x 4 columns) -->
+                        <div id="seats-container" class="grid grid-cols-4 sm:grid-cols-5 gap-2 pt-1">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right 5 Cols: Mobile-Friendly Passenger Entry & Online Payment Box -->
+                <div class="lg:col-span-5 p-4 rounded-xl bg-amber-50/50 border border-amber-200/90 space-y-3.5">
+                    <div class="flex items-center justify-between border-b border-amber-200/70 pb-2">
+                        <h4 class="font-heading text-xs sm:text-sm font-bold text-slate-900" data-i18n="formHeader">📱 MOBILE BOOKING & ONLINE PAYMENT</h4>
+                        <span class="font-robotic text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">SSL SECURE</span>
+                    </div>
+
+                    <!-- Selected Seat/Berth Summary -->
+                    <div class="p-2.5 rounded-lg bg-white border border-amber-200 flex items-center justify-between">
+                        <div>
+                            <div class="text-[10px] text-slate-500" data-i18n="lblChosenSeats">Selected Seat / Berth:</div>
+                            <div id="selected-seats-display" class="text-xs font-extrabold text-orange-700" data-i18n="noneSelected">None selected (Tap a seat/berth)</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-[10px] text-slate-500" data-i18n="lblTotalFare">Total Fare:</div>
+                            <div id="selected-fare-display" class="font-robotic text-sm font-extrabold text-slate-900">₹0</div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Name Fill Chips for Mobile Testing -->
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1" data-i18n="lblPassengerName">Passenger Name (English or Telugu):</label>
+                        <input id="input-passenger-name" type="text" placeholder="e.g. Venkateswarlu / వెంకటేశ్వర్లు" class="w-full px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-orange-500">
+                        <div class="flex flex-wrap items-center gap-1 mt-1">
+                            <span class="text-[9px] text-slate-400" data-i18n="quickNameHint">Quick Fill:</span>
+                            <button type="button" onclick="fillSampleName('Srinivasulu (శ్రీనివాసులు)')" class="text-[10px] px-1.5 py-0.5 rounded bg-white border border-slate-200 hover:border-orange-400 text-slate-700">Srinivasulu</button>
+                            <button type="button" onclick="fillSampleName('Lakshmi Devi (లక్ష్మీదేవి)')" class="text-[10px] px-1.5 py-0.5 rounded bg-white border border-slate-200 hover:border-orange-400 text-slate-700">Lakshmi Devi</button>
+                            <button type="button" onclick="fillSampleName('Subbarayudu (సుబ్బారాయుడు)')" class="text-[10px] px-1.5 py-0.5 rounded bg-white border border-slate-200 hover:border-orange-400 text-slate-700">Subbarayudu</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-700 mb-1" data-i18n="lblPhone">Mobile Number:</label>
+                            <input id="input-passenger-phone" type="tel" value="9848054321" class="font-robotic w-full px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-orange-500">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-700 mb-1" data-i18n="lblPickup">Pickup Village / Town:</label>
+                            <select id="input-pickup-point" class="w-full px-2 py-1.5 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-orange-500">
+                                <!-- Dynamically populated in English or Telugu -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Online Payment Mode Selector -->
+                    <div class="space-y-1.5">
+                        <label class="block text-[11px] font-bold text-slate-700" data-i18n="lblPayMode">Online Payment Mode:</label>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button type="button" onclick="selectPaymentMethod('PhonePe / GPay UPI')" id="pay-btn-upi" class="pay-mode-btn px-2 py-1.5 rounded-lg border-2 border-orange-600 bg-orange-50 text-orange-900 font-bold text-[10px] text-center">
+                                📱 PhonePe / GPay
+                            </button>
+                            <button type="button" onclick="selectPaymentMethod('QR Code Scan')" id="pay-btn-qr" class="pay-mode-btn px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 font-semibold text-[10px] text-center">
+                                🔳 QR Scan
+                            </button>
+                            <button type="button" onclick="selectPaymentMethod('Advance 50% Online')" id="pay-btn-adv" class="pay-mode-btn px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 font-semibold text-[10px] text-center">
+                                💳 50% Advance
+                            </button>
+                        </div>
+                        <div class="p-2 rounded-lg bg-white/90 border border-dashed border-amber-400 text-[10px] text-slate-600 flex items-center justify-between">
+                            <span>UPI ID: <strong class="font-robotic text-slate-900">jaisriramtravels@ybl</strong></span>
+                            <span class="text-emerald-700 font-bold" data-i18n="instantVerify">✓ Auto Verify</span>
+                        </div>
+                    </div>
+
+                    <!-- Status Message Banner -->
+                    <div id="booking-status-msg" class="hidden p-2.5 rounded-lg text-[11px] font-semibold"></div>
+
+                    <!-- Submit Booking Button -->
+                    <button type="button" onclick="submitSeatBooking()" class="font-robotic w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 text-white font-bold text-xs shadow-md shadow-orange-500/20 transition flex items-center justify-center gap-2">
+                        <span>🔒</span>
+                        <span data-i18n="btnPayAndBook">PAY ONLINE & SUBMIT FOR ADMIN APPROVAL</span>
+                    </button>
+
+                    <p class="text-[10px] text-slate-500 text-center" data-i18n="adminNoteBelowBtn">
+                        Note: Once paid, your seat enters Pending state. When Admin clicks Approve, it turns Confirmed; if Rejected, the seat is released.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Admin Control Panel -->
+            <div id="admin-panel" class="mt-4 pt-4 border-t border-slate-200">
+                <div class="rounded-xl bg-slate-900 text-slate-100 p-4 space-y-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-robotic px-2 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-extrabold">ADMIN CONTROL</span>
+                            <h4 class="font-heading text-xs sm:text-sm font-bold text-white" data-i18n="adminPanelTitle">
+                                ADMIN SEAT APPROVAL / REJECTION PANEL (SRIRAMULU CONTROL)
+                            </h4>
+                        </div>
+                        <span class="text-[10px] text-slate-400" data-i18n="adminPanelHint">
+                            Click 'Approve' to confirm seat booking • Click 'Reject' to release seat back to Available
+                        </span>
+                    </div>
+
+                    <div id="admin-requests-list" class="space-y-2">
+                        <!-- Dynamically populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages" class="space-y-3">
+            <div class="flex flex-wrap items-end justify-between gap-2 border-b border-slate-200 pb-2">
+                <div>
+                    <span class="font-robotic text-[10px] font-bold uppercase tracking-widest text-orange-600" data-i18n="sec3Sub">COMPLETE TOUR GUIDELINES & PACKAGES</span>
+                    <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900" data-i18n="sec3Title">
+                        TOUR PACKAGE DETAILS (TIMINGS, FOOD, STAY, RENT & ADVANCE)
+                    </h3>
+                </div>
+                <span class="font-robotic text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-bold" data-i18n="allInclusiveTag">ALL-INCLUSIVE YATRA DETAILS</span>
+            </div>
+
+            <!-- 6 Compact Info Cards Covering Every Aspect Requested -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <!-- 1. Tour Timings -->
+                <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-slab text-xs font-extrabold text-orange-700" data-i18n="pkgCard1Title">⏰ 1. Tour Timings & Pickup</span>
+                        <span class="font-robotic text-[9px] px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 font-bold">ON TIME</span>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pkgCard1Body">
+                        Starts 5:00 AM from Chintalacheruvu & Chagalamarri. Pickups at Allagadda (5:30 AM), Nandyal (6:15 AM), Mydukur (6:30 AM), Proddatur (7:15 AM). Daily temple darshans from 5:30 AM to 9:30 PM with night halt.
+                    </p>
+                </div>
+
+                <!-- 2. Satvik Food -->
+                <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-slab text-xs font-extrabold text-emerald-700" data-i18n="pkgCard2Title">🍛 2. Pure Satvik Food</span>
+                        <span class="font-robotic text-[9px] px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold">PURE VEG</span>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pkgCard2Body">
+                        Prepared fresh by our own accompanying catering team. Morning breakfast (Idli, Pongal, Vada + Coffee/Tea), full South Indian vegetarian lunch, and light dinner with warm milk included.
+                    </p>
+                </div>
+
+                <!-- 3. Accommodation -->
+                <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-slab text-xs font-extrabold text-indigo-700" data-i18n="pkgCard3Title">🏨 3. Accommodation & Stay</span>
+                        <span class="font-robotic text-[9px] px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold">AC / NON-AC</span>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pkgCard3Body">
+                        Clean AC/Non-AC rooms and TTD/Temple choultries with hot water geysers provided for fresh-up and night rest. Separate rooms available for families.
+                    </p>
+                </div>
+
+                <!-- 4. Rent & Advance Rules -->
+                <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-slab text-xs font-extrabold text-amber-700" data-i18n="pkgCard4Title">💰 4. Rent & Advance Policy</span>
+                        <span class="font-robotic text-[9px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 font-bold">EASY PAY</span>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pkgCard4Body">
+                        Block your seat online with just ₹500–₹1,000 advance. Pay balance while boarding. Free travel for children under 5 yrs. Full bus marriage/group rental starts at ₹42/km.
+                    </p>
+                </div>
+
+                <!-- 5. Temple Darshan Guidance -->
+                <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-slab text-xs font-extrabold text-rose-700" data-i18n="pkgCard5Title">🛕 5. Temple Darshan Guidance</span>
+                        <span class="font-robotic text-[9px] px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 font-bold">VIP CARE</span>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pkgCard5Body">
+                        Complete assistance for Tirumala ₹300 Special Entry Darshan, Arunachalam Girivalam guidance, and local auto/jeep coordination for senior citizens.
+                    </p>
+                </div>
+
+                <!-- 6. Bus Safety & Comfort Amenities -->
+                <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-slab text-xs font-extrabold text-teal-700" data-i18n="pkgCard6Title">🛡️ 6. Bus Safety & Comfort</span>
+                        <span class="font-robotic text-[9px] px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 font-bold">GPS LIVE</span>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="pkgCard6Body">
+                        Individual mobile charging sockets, devotional LED TV & audio, mineral water bottles, first-aid kit, and 2 senior drivers with 20+ years experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tourist-places" class="space-y-3">
+            <div class="flex flex-wrap items-end justify-between gap-2 border-b border-slate-200 pb-2">
+                <div>
+                    <span class="font-robotic text-[10px] font-bold uppercase tracking-widest text-orange-600" data-i18n="sec4Sub">52 SACRED PILGRIMAGE VILLAGES & DESTINATIONS</span>
+                    <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900" data-i18n="sec4Title">
+                        OUR 52 PILGRIMAGE & TOURIST PLACES (TEERTHA YATRA LIST)
+                    </h3>
+                </div>
+
+                <!-- Dedicated Village & Place Names Language Switcher (English / Telugu / Both) -->
+                <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-2 py-1 rounded-xl">
+                    <span class="text-[10px] font-bold text-orange-900" data-i18n="villageLangLabel">Village Names:</span>
+                    <button type="button" id="vlang-auto" onclick="setVillageNameLang('auto')" class="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-600 text-white transition" data-i18n="vlangAuto">Page Default</button>
+                    <button type="button" id="vlang-en" onclick="setVillageNameLang('en')" class="font-robotic px-2 py-0.5 rounded text-[10px] font-bold text-slate-700 hover:bg-white transition">English</button>
+                    <button type="button" id="vlang-te" onclick="setVillageNameLang('te')" class="px-2 py-0.5 rounded text-[10px] font-bold text-slate-700 hover:bg-white transition">తెలుగు</button>
+                    <button type="button" id="vlang-both" onclick="setVillageNameLang('both')" class="px-2 py-0.5 rounded text-[10px] font-bold text-slate-700 hover:bg-white transition">ENG + తెలుగు</button>
+                </div>
+            </div>
+
+            <!-- Region Filter Tabs -->
+            <div class="flex flex-wrap items-center gap-1.5">
+                <button onclick="filterPlaces('all')" id="tab-all" class="place-tab font-slab px-2.5 py-1 rounded-lg bg-orange-600 text-white font-bold text-[11px] transition" data-i18n="tabAll">All Places (52)</button>
+                <button onclick="filterPlaces('rayalaseema')" id="tab-rayalaseema" class="place-tab font-slab px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-amber-50 font-semibold text-[11px] transition" data-i18n="tabRayalaseema">Mahanandi • Srisailam • Nandyal (14)</button>
+                <button onclick="filterPlaces('chittoor')" id="tab-chittoor" class="place-tab font-slab px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-amber-50 font-semibold text-[11px] transition" data-i18n="tabChittoor">Tirumala • Tirupati • Chittoor (13)</button>
+                <button onclick="filterPlaces('nellore')" id="tab-nellore" class="place-tab font-slab px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-amber-50 font-semibold text-[11px] transition" data-i18n="tabNellore">Nellore & Coastal AP (11)</button>
+                <button onclick="filterPlaces('tnkerala')" id="tab-tnkerala" class="place-tab font-slab px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-amber-50 font-semibold text-[11px] transition" data-i18n="tabTnKerala">Tamil Nadu & Kerala (14)</button>
+            </div>
+
+            <!-- Compact High-Density Grid of 52 Sacred Places -->
+            <div id="places-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 pt-1">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <section id="contact" class="rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-stone-900 text-white p-5 sm:p-6 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+                <div class="md:col-span-7 space-y-2">
+                    <span class="font-robotic px-2 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[10px] font-bold uppercase tracking-wider" data-i18n="contactBadge">
+                        24/7 PILGRIM HELPDESK (DUMMY CONTACT DETAILS)
+                    </span>
+                    <h3 class="font-heading text-base sm:text-xl font-bold text-white" data-i18n="contactHeading">
+                        JAI SRIRAM TOURS & TRAVELS — CONTACT US
+                    </h3>
+                    <p class="text-[11px] text-slate-300 leading-relaxed" data-i18n="contactSub">
+                        For bus seat booking, family packages, or marriage bus hire across Nandyal district, contact Proprietor Sriramulu.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs">
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <div class="text-[10px] text-amber-300 font-semibold" data-i18n="lblProprietor">Proprietor / Managing Director:</div>
+                            <div class="font-slab font-bold text-white mt-0.5" data-i18n="valProprietor">Sriramulu (శ్రీరాములు)</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <div class="text-[10px] text-amber-300 font-semibold" data-i18n="lblDummyPhones">Dummy Phone Numbers:</div>
+                            <div class="font-robotic font-bold text-white mt-0.5">+91 98480 12345 / 94401 67890</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <div class="text-[10px] text-amber-300 font-semibold" data-i18n="lblDummyEmail">Dummy Email ID:</div>
+                            <div class="font-robotic text-[11px] text-white mt-0.5">sriramulu@jaisriramtravels.in</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                            <div class="text-[10px] text-amber-300 font-semibold" data-i18n="lblHeadOffice">Head Office Address:</div>
+                            <div class="text-[11px] text-white mt-0.5" data-i18n="valHeadOffice">Chintalacheruvu Village, Chagalamarri Mandal, Nandyal Dist.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Callback Dummy Box -->
+                <div class="md:col-span-5 p-4 rounded-xl bg-white/10 border border-white/15 space-y-2.5">
+                    <h4 class="font-heading text-xs font-bold text-amber-300" data-i18n="callbackTitle">📞 FREE CALLBACK ENQUIRY (DUMMY FORM)</h4>
+                    <input id="enq-name" type="text" placeholder="Your Name (మీ పేరు)" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-amber-400">
+                    <input id="enq-village" type="text" placeholder="Your Village / Town (e.g. Allagadda / Nandyal)" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-amber-400">
+                    <button type="button" onclick="sendDummyEnquiry()" class="font-robotic w-full py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs transition" data-i18n="btnSendEnq">
+                        SEND MESSAGE TO SRIRAMULU
+                    </button>
+                    <p id="enq-feedback" class="hidden text-[11px] text-emerald-300 font-semibold text-center"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Compact Footer -->
+    <footer class="max-w-4xl mx-auto px-4 sm:px-10 py-6 border-t border-slate-200/80 text-center text-[11px] text-slate-500 space-y-1">
+        <p data-i18n="footerLine1">© 2026 Jai Sriram Tours & Travels — Chintalacheruvu Village, Chagalamarri Mandal, Nandyal District.</p>
+        <p class="text-[10px] text-slate-400" data-i18n="footerLine2">This is a complete interactive dummy website built for mobile & desktop preview.</p>
+    </footer>
+
+    <script>
+        // Default Language is set to English ('en') as requested
+        let currentLang = 'en';
+        // Village/Pilgrimage names language mode: 'auto' (follows page language), 'en', 'te', or 'both'
+        let villageNameLangMode = 'auto';
+        let selectedBusId = 'bus-1';
+        let selectedPaymentMethod = 'PhonePe / GPay UPI';
+        let activePlaceCategory = 'all';
+
+        // Pickup Villages in Nandyal District (Switches between English and Telugu)
+        const pickupVillages = [
+            { en: "Chintalacheruvu Village", te: "చింతలచెరువు గ్రామం" },
+            { en: "Chagalamarri Mandal", te: "చాగలమర్రి మండలం" },
+            { en: "Allagadda Town", te: "ఆళ్లగడ్డ పట్టణం" },
+            { en: "Nandyal City", te: "నంద్యాల పట్టణం" },
+            { en: "Mydukur Crossroads", te: "మైదుకూరు" },
+            { en: "Proddatur Town", te: "ప్రొద్దుటూరు" }
+        ];
+
+        // Bilingual Translation Dictionary (English Default & Stylish Telugu)
+        const i18n = {
+            en: {
+                omSriRam: "OM SRI RAM",
+                brandShort: "JAI SRIRAM TRAVELS",
+                navBookNow: "BOOK NOW",
+                navUpcoming: "UPCOMING TOURS",
+                navPackages: "PACKAGES",
+                navPlaces: "OUR TOURIST PLACES",
+                navContact: "CONTACT",
+                navAdmin: "ADMIN",
+                heroBadge: "CHINTALACHERUVU VILLAGE, CHAGALAMARRI MANDAL, NANDYAL DIST.",
+                heroTitle: "JAI SRIRAM TOURS & TRAVELS",
+                heroDesc: "Serving pilgrims and travelers for the last 30+ years (since 1996) with safe, punctual, and comfortable sleeper & seater luxury coaches. Over 60,000+ devotees have completed sacred tours with glowing positive feedback.",
+                pickupTitle: "🚌 DIRECT BUS PICKUP ACROSS ENTIRE NANDYAL DISTRICT & NEARBY HUBS:",
+                hub1: "📍 Chintalacheruvu & Chagalamarri",
+                hub2: "📍 Allagadda",
+                hub3: "📍 Nandyal Town",
+                hub4: "📍 Mydukur",
+                hub5: "📍 Proddatur",
+                hub6: "✨ Entire Nandyal Dist. Pickup",
+                statYears: "YEARS OF SERVICE",
+                statPilgrims: "HAPPY PILGRIMS",
+                statTours: "TOURS COMPLETED",
+                statRating: "POSITIVE RATING",
+                feedbackTag: "PILGRIM FEEDBACK",
+                feedback1: "\"Our Arunachalam & Rameswaram yatra from Chagalamarri was super comfortable. Homely food & neat stay!\" — Ramasubba Reddy, Allagadda",
+                exploreBusesLink: "VIEW BUSES & SEATS →",
+                sec2Sub: "LIVE BUS FLEET • 2x2 GRID",
+                sec2Title: "UPCOMING TOURS (SELECT BUS TO BOOK)",
+                sec2Hint: "Click 'Select & View Seats' on any of the 4 buses below to view Berths & Seaters",
+                lblAvailable: "Available:",
+                lblPending: "Pending Admin:",
+                lblBooked: "Booked:",
+                legAvail: "Available",
+                legSelected: "Selected",
+                legPending: "Pending Approval",
+                legBooked: "Confirmed Booked",
+                legClickHint: "Tap any available Seat or Berth to select",
+                berthSectionTitle: "SLEEPER BERTHS (SEPARATE UPPER/LOWER DECK)",
+                berthSubNote: "Full-length cushioned sleeper berths ideal for elders & night journeys (B1 - B12)",
+                seatSectionTitle: "PUSH-BACK SEATER SEATS (SEPARATE DECK)",
+                seatSubNote: "2x2 Luxury ergonomic push-back seats (S1 - S20)",
+                formHeader: "📱 MOBILE BOOKING & ONLINE PAYMENT",
+                lblChosenSeats: "Selected Seat / Berth:",
+                noneSelected: "None selected (Tap a seat/berth)",
+                lblTotalFare: "Total Fare:",
+                lblPassengerName: "Passenger Name (English or Telugu):",
+                quickNameHint: "Quick Fill:",
+                lblPhone: "Mobile Number:",
+                lblPickup: "Pickup Village / Town:",
+                lblPayMode: "Online Payment Mode:",
+                instantVerify: "✓ Auto Verify",
+                btnPayAndBook: "PAY ONLINE & SUBMIT FOR ADMIN APPROVAL",
+                adminNoteBelowBtn: "Note: Once paid, your seat enters Pending state. When Admin clicks Approve, it turns Confirmed; if Rejected, the seat is released.",
+                adminPanelTitle: "ADMIN SEAT APPROVAL / REJECTION PANEL (SRIRAMULU CONTROL)",
+                adminPanelHint: "Click 'Approve' to confirm seat booking • Click 'Reject' to release seat back to Available",
+                sec3Sub: "COMPLETE TOUR GUIDELINES & PACKAGES",
+                sec3Title: "TOUR PACKAGE DETAILS (TIMINGS, FOOD, STAY, RENT & ADVANCE)",
+                allInclusiveTag: "ALL-INCLUSIVE YATRA DETAILS",
+                pkgCard1Title: "⏰ 1. Tour Timings & Pickup",
+                pkgCard1Body: "Starts 5:00 AM from Chintalacheruvu & Chagalamarri. Pickups at Allagadda (5:30 AM), Nandyal (6:15 AM), Mydukur (6:30 AM), Proddatur (7:15 AM). Daily temple darshans from 5:30 AM to 9:30 PM with night halt.",
+                pkgCard2Title: "🍛 2. Pure Satvik Food",
+                pkgCard2Body: "Prepared fresh by our own accompanying catering team. Morning breakfast (Idli, Pongal, Vada + Coffee/Tea), full South Indian vegetarian lunch, and light dinner with warm milk included.",
+                pkgCard3Title: "🏨 3. Accommodation & Stay",
+                pkgCard3Body: "Clean AC/Non-AC rooms and TTD/Temple choultries with hot water geysers provided for fresh-up and night rest. Separate rooms available for families.",
+                pkgCard4Title: "💰 4. Rent & Advance Policy",
+                pkgCard4Body: "Block your seat online with just ₹500–₹1,000 advance. Pay balance while boarding. Free travel for children under 5 yrs. Full bus marriage/group rental starts at ₹42/km.",
+                pkgCard5Title: "🛕 5. Temple Darshan Guidance",
+                pkgCard5Body: "Complete assistance for Tirumala ₹300 Special Entry Darshan, Arunachalam Girivalam guidance, and local auto/jeep coordination for senior citizens.",
+                pkgCard6Title: "🛡️ 6. Bus Safety & Comfort",
+                pkgCard6Body: "Individual mobile charging sockets, devotional LED TV & audio, mineral water bottles, first-aid kit, and 2 senior drivers with 20+ years experience.",
+                sec4Sub: "52 SACRED PILGRIMAGE VILLAGES & DESTINATIONS",
+                sec4Title: "OUR 52 PILGRIMAGE & TOURIST PLACES (TEERTHA YATRA LIST)",
+                villageLangLabel: "Village Names:",
+                vlangAuto: "Page Default",
+                tabAll: "All Places (52)",
+                tabRayalaseema: "Mahanandi • Srisailam • Nandyal (14)",
+                tabChittoor: "Tirumala • Tirupati • Chittoor (13)",
+                tabNellore: "Nellore & Coastal AP (11)",
+                tabTnKerala: "Tamil Nadu & Kerala (14)",
+                contactBadge: "24/7 PILGRIM HELPDESK (DUMMY CONTACT DETAILS)",
+                contactHeading: "JAI SRIRAM TOURS & TRAVELS — CONTACT US",
+                contactSub: "For bus seat booking, family packages, or marriage bus hire across Nandyal district, contact Proprietor Sriramulu.",
+                lblProprietor: "Proprietor / Managing Director:",
+                valProprietor: "Sriramulu (శ్రీరాములు)",
+                lblDummyPhones: "Dummy Phone Numbers:",
+                lblDummyEmail: "Dummy Email ID:",
+                lblHeadOffice: "Head Office Address:",
+                valHeadOffice: "Chintalacheruvu Village, Chagalamarri Mandal, Nandyal Dist.",
+                callbackTitle: "📞 FREE CALLBACK ENQUIRY (DUMMY FORM)",
+                btnSendEnq: "SEND MESSAGE TO SRIRAMULU",
+                footerLine1: "© 2026 Jai Sriram Tours & Travels — Chintalacheruvu Village, Chagalamarri Mandal, Nandyal District.",
+                footerLine2: "This is a complete interactive dummy website built for mobile & desktop preview."
+            },
+            te: {
+                omSriRam: "ఓం శ్రీరామ",
+                brandShort: "జై శ్రీరామ్ ట్రావెల్స్",
+                navBookNow: "బుక్ నౌ",
+                navUpcoming: "అప్ కమింగ్ టూర్స్",
+                navPackages: "ప్యాకేజెస్",
+                navPlaces: "అవర్ టూరిస్ట్ ప్లేసెస్",
+                navContact: "కాంటాక్ట్",
+                navAdmin: "అడ్మిన్",
+                heroBadge: "చింతలచెరువు గ్రామం, చాగలమర్రి మండలం, నంద్యాల జిల్లా",
+                heroTitle: "జై శ్రీరామ్ టూర్స్ అండ్ ట్రావెల్స్",
+                heroDesc: "గత 30 సంవత్సరాలుగా (1996 నుండి) భక్తులకు మరియు యాత్రికులకు అత్యంత సురక్షితమైన, సౌకర్యవంతమైన తీర్థయాత్ర మరియు టూరిస్ట్ బస్సు సేవలను అందిస్తున్నాము. ఇప్పటివరకు 60,000+ మందికి పైగా యాత్రికులు మా బస్సులలో ప్రయాణించి సంతోషకరమైన పాజిటివ్ ఫీడ్‌బ్యాక్ అందించారు.",
+                pickupTitle: "🚌 మా బస్సు పికప్ సర్వీసులు (మొత్తం నంద్యాల జిల్లా అంతటా మీ ఊరికే బస్సు వస్తుంది):",
+                hub1: "📍 చింతలచెరువు & చాగలమర్రి",
+                hub2: "📍 ఆళ్లగడ్డ (Allagadda)",
+                hub3: "📍 నంద్యాల (Nandyal)",
+                hub4: "📍 మైదుకూరు (Mydukur)",
+                hub5: "📍 ప్రొద్దుటూరు (Proddatur)",
+                hub6: "✨ మొత్తం నంద్యాల జిల్లా హోమ్ పికప్",
+                statYears: "సంవత్సరాల అనుభవం",
+                statPilgrims: "యాత్రికుల ప్రయాణం",
+                statTours: "విజయవంతమైన టూర్లు",
+                statRating: "పాజిటివ్ ఫీడ్‌బ్యాక్",
+                feedbackTag: "యాత్రికుల అభిప్రాయం",
+                feedback1: "\"చాగలమర్రి నుండి అరుణాచలం యాత్ర చాలా బాగా జరిగింది. భోజనం, వసతి అన్నీ సొంత ఇంటిలా చూసుకున్నారు!\" — రామసుబ్బారెడ్డి, ఆళ్లగడ్డ",
+                exploreBusesLink: "బస్సులు & సీట్లు చూడండి →",
+                sec2Sub: "LIVE BUS FLEET • 2x2 GRID",
+                sec2Title: "అప్ కమింగ్ టూర్స్ (రాబోయే యాత్రా బస్సులు)",
+                sec2Hint: "ఏదైనా బస్సుపై 'సెలెక్ట్ & సీట్లు చూడండి' క్లిక్ చేసి మీ సీటు లేదా బెర్త్ బుక్ చేసుకోండి",
+                lblAvailable: "ఖాళీ సీట్లు:",
+                lblPending: "అడ్మిన్ పెండింగ్:",
+                lblBooked: "బుక్ అయినవి:",
+                legAvail: "ఖాళీ (Available)",
+                legSelected: "ఎంచుకున్నవి (Selected)",
+                legPending: "అడ్మిన్ అప్రూవల్ పెండింగ్ (Pending)",
+                legBooked: "బుక్ అయినవి (Confirmed)",
+                legClickHint: "కావాల్సిన సీటు లేదా బెర్త్ పై నొక్కండి",
+                berthSectionTitle: "స్లీపర్ బెర్తులు (Sleeper Berths - సపరేట్ వ్యూ)",
+                berthSubNote: "పెద్దలకు మరియు దూర ప్రయాణాలకు సౌకర్యవంతమైన పడుకునే బెర్తులు (B1 - B12)",
+                seatSectionTitle: "పుష్-బ్యాక్ సీట్లు (Seater Seats - సపరేట్ వ్యూ)",
+                seatSubNote: "2x2 లగ్జరీ పుష్-బ్యాక్ సీట్లు (S1 - S20) • డ్రైవర్ క్యాబిన్ వైపు నుండి వరుసగా",
+                formHeader: "📱 మొబైల్ సీటు బుకింగ్ & ఆన్‌లైన్ పేమెంట్",
+                lblChosenSeats: "ఎంచుకున్న సీటు / బెర్త్:",
+                noneSelected: "ఏదీ ఎంచుకోలేదు (సీటుపై క్లిక్ చేయండి)",
+                lblTotalFare: "మొత్తం చార్జీ:",
+                lblPassengerName: "యాత్రికుని పేరు (తెలుగు / ఇంగ్లీష్):",
+                quickNameHint: "డమ్మీ పేరు నొక్కండి:",
+                lblPhone: "మొబైల్ నెంబర్:",
+                lblPickup: "పికప్ గ్రామం / పట్టణం:",
+                lblPayMode: "ఆన్‌లైన్ పేమెంట్ విధానం (Online Payment Mode):",
+                instantVerify: "✓ ఆటో వెరిఫై",
+                btnPayAndBook: "ఆన్‌లైన్ పేమెంట్ చేసి సీటు బుక్ చేయండి",
+                adminNoteBelowBtn: "గమనిక: మీరు బుక్ చేయగానే అడ్మిన్ ప్యానెల్‌కు వెళ్తుంది. అడ్మిన్ Approve చేయగానే సీటు కన్ఫర్మ్ అవుతుంది, Reject చేస్తే సీటు మళ్ళీ ఖాళీ అవుతుంది.",
+                adminPanelTitle: "అడ్మిన్ సీటు అప్రూవల్ / రిజెక్ట్ ప్యానెల్ (శ్రీరాములు గారి కంట్రోల్)",
+                adminPanelHint: "ఇక్కడ 'Approve' నొక్కితే సీటు బుక్ అయిపోతుంది • 'Reject' నొక్కితే సీటు క్యాన్సిల్ అయి ఖాళీ అవుతుంది",
+                sec3Sub: "COMPLETE TOUR GUIDELINES & PACKAGES",
+                sec3Title: "టూర్ ప్యాకేజీ పూర్తి వివరాలు (టైమింగ్స్, భోజనం, వసతి, రెంట్ & అడ్వాన్స్)",
+                allInclusiveTag: "అన్నీ కలిపిన ప్యాకేజీ వివరాలు",
+                pkgCard1Title: "⏰ 1. టూర్ టైమింగ్స్ (Timings)",
+                pkgCard1Body: "ఉదయం 5:00 గం.లకు చింతలచెరువు & చాగలమర్రి నుండి బస్సు బయలుదేరును. ఆళ్లగడ్డ (5:30 AM), నంద్యాల (6:15 AM), మైదుకూరు (6:30 AM), ప్రొద్దుటూరు (7:15 AM) వద్ద పికప్ ఉంటుంది. ప్రతిరోజూ ఉదయం 5:30 నుండి రాత్రి 9:30 వరకు దర్శనాలు, రాత్రి విశ్రాంతి.",
+                pkgCard2Title: "🍛 2. భోజన సదుపాయం (Food)",
+                pkgCard2Body: "మా సొంత వంట మాస్టర్లతో స్వచ్ఛమైన బ్రాహ్మణ / సాత్విక శాకాహార భోజనం. ఉదయం టిఫిన్ (ఇడ్లీ, పొంగల్, వడ) + కాఫీ/టీ, మధ్యాహ్నం పూర్ణ భోజనం (అన్నం, పప్పు, సాంబార్, కూర, పెరుగు), రాత్రి ఫలహారం & పాలు అందించబడును.",
+                pkgCard3Title: "🏨 3. వసతి సదుపాయం (Stay)",
+                pkgCard3Body: "ప్రతి పుణ్యక్షేత్రం వద్ద దేవస్థానం సత్రాలు లేదా పరిశుభ్రమైన డీలక్స్ లాడ్జీలలో స్నానానికి వేడినీరు, విశ్రాంతి గదులు ఏర్పాటు చేయబడును. కుటుంబాలకు సపరేట్ రూమ్ ఆప్షన్ కూడా కలదు.",
+                pkgCard4Title: "💰 4. రెంట్ & అడ్వాన్స్ (Rent/Advance)",
+                pkgCard4Body: "సీటు బుకింగ్ కోసం ₹500 నుండి ₹1,000 మాత్రమే ఆన్‌లైన్ అడ్వాన్స్ చెల్లించి సీటు బ్లాక్ చేసుకోవచ్చు. మిగిలిన రెంట్ బస్సు ఎక్కేటప్పుడు చెల్లించవచ్చు. 5 సం. లోపు పిల్లలకు టికెట్ ఉచితం. పూర్తి బస్సు అద్దెకు (మ్యారేజ్/గ్రూప్ టూర్స్) కి.మీ. ₹42 మాత్రమే.",
+                pkgCard5Title: "🛕 5. దేవాలయ దర్శనం (Temple Guide)",
+                pkgCard5Body: "తిరుమల ₹300 ప్రత్యేక దర్శనం, శీఘ్ర దర్శనం టికెట్ల బుకింగ్ సహాయం, అరుణాచలం గిరి ప్రదక్షిణ గైడెన్స్, మరియు వృద్ధులకు ఆలయం వద్దకు ఆటో/జీపు సహాయం మా టూర్ మేనేజర్ స్వయంగా చూసుకుంటారు.",
+                pkgCard6Title: "🛡️ 6. బస్సు సౌకర్యాలు (Bus Amenities)",
+                pkgCard6Body: "ప్రతి సీటుకు మొబైల్ చార్జింగ్ పాయింట్, భక్తి పాటల LED టీవీ, మినరల్ వాటర్ బాటిల్స్, ఫస్ట్-ఎయిడ్ మెడికల్ కిట్, మరియు 20 ఏళ్ల అనుభవం ఉన్న ఇద్దరు సీనియర్ డ్రైవర్లు ఉంటారు.",
+                sec4Sub: "52 SACRED PILGRIMAGE VILLAGES & DESTINATIONS",
+                sec4Title: "మా బస్సులో వెళ్లే 52 పుణ్యక్షేత్రాలు & తీర్థయాత్రల గ్రామాల పేర్లు",
+                villageLangLabel: "గ్రామాల పేర్లు:",
+                vlangAuto: "పేజీ భాష",
+                tabAll: "అన్నీ (52 క్షేత్రాలు)",
+                tabRayalaseema: "మహానంది • శ్రీశైలం • నంద్యాల (14)",
+                tabChittoor: "తిరుమల • తిరుపతి • చిత్తూరు (13)",
+                tabNellore: "నెల్లూరు & ఆంధ్ర క్షేత్రాలు (11)",
+                tabTnKerala: "తమిళనాడు & కేరళ (14)",
+                contactBadge: "24/7 యాత్రికుల సహాయ కేంద్రం (DUMMY CONTACT DETAILS)",
+                contactHeading: "జై శ్రీరామ్ టూర్స్ అండ్ ట్రావెల్స్ — సంప్రదించండి",
+                contactSub: "బస్సు సీటు బుకింగ్, గ్రూప్ బుకింగ్స్, పెళ్లిళ్ల బస్సులు లేదా తీర్థయాత్రల వివరాల కోసం మా మేనేజింగ్ డైరెక్టర్ శ్రీరాములు గారిని సంప్రదించండి.",
+                lblProprietor: "ప్రొప్రైటర్ / నిర్వాహకులు:",
+                valProprietor: "శ్రీరాములు (Sriramulu)",
+                lblDummyPhones: "డమ్మీ మొబైల్ నెంబర్లు:",
+                lblDummyEmail: "డమ్మీ ఈమెయిల్ ఐడి:",
+                lblHeadOffice: "మెయిన్ ఆఫీస్ అడ్రస్:",
+                valHeadOffice: "చింతలచెరువు గ్రామం, చాగలమర్రి మం., నంద్యాల జిల్లా",
+                callbackTitle: "📞 ఉచిత కాల్‌‌బ్యాక్ ఎంక్వైరీ (Dummy Enquiry)",
+                btnSendEnq: "శ్రీరాములు గారికి మెసేజ్ పంపండి",
+                footerLine1: "© 2026 జై శ్రీరామ్ టూర్స్ అండ్ ట్రావెల్స్ — చింతలచెరువు గ్రామం, చాగలమర్రి మండలం, నంద్యాల జిల్లా.",
+                footerLine2: "ఇది డెమో / డమ్మీ వెబ్‌సైట్ నమూనా • మొబైల్ మరియు డెస్క్‌టాప్ బుకింగ్ ప్రివ్యూ కోసం రూపొందించబడింది."
+            }
+        };
+
+        // 4 Upcoming Buses (Left, Right, Down-Left, Down-Right) with bilingual passenger & village names
+        const busesData = [
+            {
+                id: 'bus-1',
+                gridPosTe: 'లెఫ్ట్ సైడ్ బస్సు (BUS 1)',
+                gridPosEn: 'TOP-LEFT BUS (BUS 1)',
+                nameTe: 'తిరుమల - తిరుపతి - కాణిపాకం - శ్రీకాళహస్తి - గోల్డెన్ టెంపుల్ స్పెషల్',
+                nameEn: 'Tirumala - Tirupati - Kanipakam - Srikalahasti - Golden Temple Express',
+                dateTe: 'ప్రయాణ తేదీ: 12 అక్టోబర్ 2026 • 4 రోజులు (భోజనం & వసతితో)',
+                dateEn: 'Departure: 12 Oct 2026 • 4 Days (With Food & Stay)',
+                routeTe: 'పికప్ గ్రామాలు: చింతలచెరువు → చాగలమర్రి → ఆళ్లగడ్డ → నంద్యాల → మైదుకూరు → ప్రొద్దుటూరు',
+                routeEn: 'Pickup Villages: Chintalacheruvu → Chagalamarri → Allagadda → Nandyal → Mydukur → Proddatur',
+                seatPrice: 2200,
+                berthPrice: 2850,
+                selectedList: [],
+                berths: createInitialDeck('B', 12, [
+                    { code: 'B1', status: 'booked', passengerEn: 'Ramachandra Reddy (Allagadda)', passengerTe: 'రామచంద్రారెడ్డి (ఆళ్లగడ్డ)', phone: '9848011223', pickupEn: 'Allagadda Town', pickupTe: 'ఆళ్లగడ్డ పట్టణం' },
+                    { code: 'B2', status: 'booked', passengerEn: 'Subbamma (Nandyal)', passengerTe: 'సుబ్బమ్మ (నంద్యాల)', phone: '9848011224', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' },
+                    { code: 'B5', status: 'pending', passengerEn: 'Sivakumar (Chagalamarri)', passengerTe: 'శివకుమార్ (చాగలమర్రి)', phone: '9440199887', pickupEn: 'Chagalamarri Mandal', pickupTe: 'చాగలమర్రి మండలం', payMode: 'PhonePe / GPay UPI' }
+                ]),
+                seats: createInitialDeck('S', 20, [
+                    { code: 'S1', status: 'booked', passengerEn: 'Venkataramana (Mydukur)', passengerTe: 'వెంకటరమణ (మైదుకూరు)', phone: '9848022334', pickupEn: 'Mydukur Crossroads', pickupTe: 'మైదుకూరు' },
+                    { code: 'S2', status: 'booked', passengerEn: 'Padmavathi (Mydukur)', passengerTe: 'పద్మావతి (మైదుకూరు)', phone: '9848022334', pickupEn: 'Mydukur Crossroads', pickupTe: 'మైదుకూరు' },
+                    { code: 'S3', status: 'booked', passengerEn: 'Narasimhulu (Proddatur)', passengerTe: 'నరసింహులు (ప్రొద్దుటూరు)', phone: '9848033445', pickupEn: 'Proddatur Town', pickupTe: 'ప్రొద్దుటూరు' },
+                    { code: 'S4', status: 'booked', passengerEn: 'Lakshmi Devi (Chintalacheruvu)', passengerTe: 'లక్ష్మీదేవి (చింతలచెరువు)', phone: '9848044556', pickupEn: 'Chintalacheruvu Village', pickupTe: 'చింతలచెరువు గ్రామం' },
+                    { code: 'S8', status: 'booked', passengerEn: 'Govindu (Nandyal)', passengerTe: 'గోవిందు (నంద్యాల)', phone: '9848055667', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' }
+                ])
+            },
+            {
+                id: 'bus-2',
+                gridPosTe: 'రైట్ సైడ్ బస్సు (BUS 2)',
+                gridPosEn: 'TOP-RIGHT BUS (BUS 2)',
+                nameTe: 'అరుణాచలం గిరిప్రదక్షిణ - కాంచీపురం - శ్రీరంగం - రామేశ్వరం - మధురై యాత్ర',
+                nameEn: 'Arunachalam Girivalam - Kanchipuram - Srirangam - Rameswaram - Madurai Tour',
+                dateTe: 'ప్రయాణ తేదీ: 18 అక్టోబర్ 2026 • 6 రోజులు (పౌర్ణమి స్పెషల్)',
+                dateEn: 'Departure: 18 Oct 2026 • 6 Days (Pournami Special)',
+                routeTe: 'పికప్ గ్రామాలు: నంద్యాల → ఆళ్లగడ్డ → చాగలమర్రి → మైదుకూరు → ప్రొద్దుటూరు',
+                routeEn: 'Pickup Villages: Nandyal → Allagadda → Chagalamarri → Mydukur → Proddatur',
+                seatPrice: 3800,
+                berthPrice: 4600,
+                selectedList: [],
+                berths: createInitialDeck('B', 12, [
+                    { code: 'B1', status: 'booked', passengerEn: 'Chandrasekhar (Nandyal)', passengerTe: 'చంద్రశేఖర్ (నంద్యాల)', phone: '9848066778', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' },
+                    { code: 'B2', status: 'booked', passengerEn: 'Saraswathi (Nandyal)', passengerTe: 'సరస్వతి (నంద్యాల)', phone: '9848066778', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' },
+                    { code: 'B3', status: 'booked', passengerEn: 'Mallaiah (Allagadda)', passengerTe: 'మల్లయ్య (ఆళ్లగడ్డ)', phone: '9848077889', pickupEn: 'Allagadda Town', pickupTe: 'ఆళ్లగడ్డ పట్టణం' }
+                ]),
+                seats: createInitialDeck('S', 20, [
+                    { code: 'S1', status: 'booked', passengerEn: 'Rajasekhar (Proddatur)', passengerTe: 'రాజశేఖర్ (ప్రొద్దుటూరు)', phone: '9848088990', pickupEn: 'Proddatur Town', pickupTe: 'ప్రొద్దుటూరు' },
+                    { code: 'S2', status: 'booked', passengerEn: 'Sujatha (Proddatur)', passengerTe: 'సుజాత (ప్రొద్దుటూరు)', phone: '9848088990', pickupEn: 'Proddatur Town', pickupTe: 'ప్రొద్దుటూరు' },
+                    { code: 'S5', status: 'booked', passengerEn: 'Obula Reddy (Chagalamarri)', passengerTe: 'ఓబులరెడ్డి (చాగలమర్రి)', phone: '9848099001', pickupEn: 'Chagalamarri Mandal', pickupTe: 'చాగలమర్రి మండలం' }
+                ])
+            },
+            {
+                id: 'bus-3',
+                gridPosTe: 'డౌన్ లెఫ్ట్ బస్సు (BUS 3)',
+                gridPosEn: 'DOWN-LEFT BUS (BUS 3)',
+                nameTe: 'మహానంది - శ్రీశైలం - యాగంటి - అహోబిలం - మంత్రాలయం దివ్యక్షేత్ర యాత్ర',
+                nameEn: 'Mahanandi - Srisailam - Yaganti - Ahobilam - Mantralayam Sacred Circuit',
+                dateTe: 'ప్రయాణ తేదీ: 24 అక్టోబర్ 2026 • 3 రోజులు (వీకెండ్ స్పెషల్)',
+                dateEn: 'Departure: 24 Oct 2026 • 3 Days (Weekend Special)',
+                routeTe: 'పికప్ గ్రామాలు: ప్రొద్దుటూరు → మైదుకూరు → చాగలమర్రి → ఆళ్లగడ్డ → నంద్యాల',
+                routeEn: 'Pickup Villages: Proddatur → Mydukur → Chagalamarri → Allagadda → Nandyal',
+                seatPrice: 1650,
+                berthPrice: 2100,
+                selectedList: [],
+                berths: createInitialDeck('B', 12, [
+                    { code: 'B1', status: 'booked', passengerEn: 'Pullaiah (Chintalacheruvu)', passengerTe: 'పుల్లయ్య (చింతలచెరువు)', phone: '9440123456', pickupEn: 'Chintalacheruvu Village', pickupTe: 'చింతలచెరువు గ్రామం' }
+                ]),
+                seats: createInitialDeck('S', 20, [
+                    { code: 'S1', status: 'booked', passengerEn: 'Raghuram (Nandyal)', passengerTe: 'రఘురామ్ (నంద్యాల)', phone: '9440112233', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' },
+                    { code: 'S2', status: 'booked', passengerEn: 'Annapurna (Nandyal)', passengerTe: 'అన్నపూర్ణ (నంద్యాల)', phone: '9440112233', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' },
+                    { code: 'S3', status: 'booked', passengerEn: 'Bhaskar (Allagadda)', passengerTe: 'భాస్కర్ (ఆళ్లగడ్డ)', phone: '9440144556', pickupEn: 'Allagadda Town', pickupTe: 'ఆళ్లగడ్డ పట్టణం' }
+                ])
+            },
+            {
+                id: 'bus-4',
+                gridPosTe: 'డౌన్ రైట్ బస్సు (BUS 4)',
+                gridPosEn: 'DOWN-RIGHT BUS (BUS 4)',
+                nameTe: 'శబరిమల - గురువాయూర్ - తిరువనంతపురం పద్మనాభస్వామి - కన్యాకుమారి యాత్ర',
+                nameEn: 'Sabarimala - Guruvayur - Trivandrum Padmanabhaswamy - Kanyakumari Yatra',
+                dateTe: 'ప్రయాణ తేదీ: 02 నవంబర్ 2026 • 7 రోజులు (కేరళ & తమిళనాడు మెగా టూర్)',
+                dateEn: 'Departure: 02 Nov 2026 • 7 Days (Kerala & TN Grand Yatra)',
+                routeTe: 'పికప్ గ్రామాలు: చింతలచెరువు → చాగలమర్రి → ఆళ్లగడ్డ → నంద్యాల → మైదుకూరు → ప్రొద్దుటూరు',
+                routeEn: 'Pickup Villages: Chintalacheruvu → Chagalamarri → Allagadda → Nandyal → Mydukur → Proddatur',
+                seatPrice: 4500,
+                berthPrice: 5400,
+                selectedList: [],
+                berths: createInitialDeck('B', 12, [
+                    { code: 'B1', status: 'booked', passengerEn: 'Ayyappa Swamy Group (Nandyal)', passengerTe: 'అయ్యప్ప స్వామి గ్రూప్ (నంద్యాల)', phone: '9848077111', pickupEn: 'Nandyal City', pickupTe: 'నంద్యాల పట్టణం' },
+                    { code: 'B2', status: 'booked', passengerEn: 'Guruswamy Ramana (Allagadda)', passengerTe: 'గురుస్వామి రమణ (ఆళ్లగడ్డ)', phone: '9848077222', pickupEn: 'Allagadda Town', pickupTe: 'ఆళ్లగడ్డ పట్టణం' }
+                ]),
+                seats: createInitialDeck('S', 20, [
+                    { code: 'S1', status: 'booked', passengerEn: 'Manikanta (Proddatur)', passengerTe: 'మణికంఠ (ప్రొద్దుటూరు)', phone: '9848077333', pickupEn: 'Proddatur Town', pickupTe: 'ప్రొద్దుటూరు' },
+                    { code: 'S2', status: 'booked', passengerEn: 'Hariharan (Mydukur)', passengerTe: 'హరిహరన్ (మైదుకూరు)', phone: '9848077444', pickupEn: 'Mydukur Crossroads', pickupTe: 'మైదుకూరు' }
+                ])
+            }
+        ];
+
+        function createInitialDeck(prefix, count, presetList) {
+            const items = [];
+            for (let i = 1; i <= count; i++) {
+                const code = `${prefix}${i}`;
+                const found = presetList.find(p => p.code === code);
+                if (found) {
+                    items.push({
+                        code,
+                        type: prefix === 'B' ? 'berth' : 'seat',
+                        status: found.status,
+                        passengerEn: found.passengerEn,
+                        passengerTe: found.passengerTe,
+                        phone: found.phone,
+                        pickupEn: found.pickupEn,
+                        pickupTe: found.pickupTe,
+                        payMode: found.payMode || 'PhonePe / GPay UPI'
+                    });
+                } else {
+                    items.push({
+                        code,
+                        type: prefix === 'B' ? 'berth' : 'seat',
+                        status: 'available',
+                        passengerEn: '',
+                        passengerTe: '',
+                        phone: '',
+                        pickupEn: '',
+                        pickupTe: '',
+                        payMode: ''
+                    });
+                }
+            }
+            return items;
+        }
+
+        // 52 Sacred Pilgrimage & Village Names (Switches cleanly between English & Telugu)
+        const sacredPlaces = [
+            // Rayalaseema: Nandyal, Kurnool, Kadapa (14)
+            { id: 1, cat: 'rayalaseema', te: 'మహానంది క్షేత్రం', en: 'Mahanandi Temple', distTe: 'నంద్యాల జిల్లా', distEn: 'Nandyal Dist' },
+            { id: 2, cat: 'rayalaseema', te: 'శ్రీశైలం మల్లికార్జున స్వామి', en: 'Srisailam Jyotirlinga', distTe: 'నంద్యాల జిల్లా', distEn: 'Nandyal Dist' },
+            { id: 3, cat: 'rayalaseema', te: 'అహోబిలం నవ నరసింహ క్షేత్రం', en: 'Ahobilam Nava Narasimha', distTe: 'ఆళ్లగడ్డ దగ్గర', distEn: 'Near Allagadda' },
+            { id: 4, cat: 'rayalaseema', te: 'యాగంటి ఉమామహేశ్వర ఆలయం', en: 'Yaganti Uma Maheswara', distTe: 'బనగానపల్లె, నంద్యాల', distEn: 'Banaganapalle, Nandyal' },
+            { id: 5, cat: 'rayalaseema', te: 'మంత్రాలయం రాఘవేంద్ర స్వామి', en: 'Mantralayam Raghavendra', distTe: 'కర్నూలు జిల్లా', distEn: 'Kurnool Dist' },
+            { id: 6, cat: 'rayalaseema', te: 'ఓంకారం సిద్ధేశ్వర కోన', en: 'Omkaram Siddheswara Kona', distTe: 'నంద్యాల దగ్గర', distEn: 'Near Nandyal' },
+            { id: 7, cat: 'rayalaseema', te: 'కామదాలకల్వ నరసింహస్వామి', en: 'Kadamalakalva Narasimha', distTe: 'నంద్యాల జిల్లా', distEn: 'Nandyal Dist' },
+            { id: 8, cat: 'rayalaseema', te: 'అలంపూర్ జోగులాంబ శక్తిపీఠం', en: 'Alampur Jogulamba Shakti', distTe: 'తుంగభద్ర తీరం', distEn: 'Tungabhadra Bank' },
+            { id: 9, cat: 'rayalaseema', te: 'బ్రహ్మం గారి మఠం (కందిమల్లాయపల్లె)', en: 'Brahmamgari Matham Village', distTe: 'మైదుకూరు దగ్గర', distEn: 'Near Mydukur' },
+            { id: 10, cat: 'rayalaseema', te: 'పుష్పగిరి చెన్నకేశవ స్వామి', en: 'Pushpagiri Chennakesava', distTe: 'కడప జిల్లా', distEn: 'Kadapa Dist' },
+            { id: 11, cat: 'rayalaseema', te: 'ఒంటిమిట్ట కోదండరామ స్వామి', en: 'Vontimitta Kodandarama', distTe: 'కడప జిల్లా', distEn: 'Kadapa Dist' },
+            { id: 12, cat: 'rayalaseema', te: 'దేవుని కడప లక్ష్మీ వెంకటేశ్వర', en: 'Devuni Kadapa Venkateswara', distTe: 'కడప పట్టణం', distEn: 'Kadapa City' },
+            { id: 13, cat: 'rayalaseema', te: 'ప్రొద్దుటూరు ముక్తి రామేశ్వరం', en: 'Proddatur Mukti Rameswaram', distTe: 'ప్రొద్దుటూరు', distEn: 'Proddatur Town' },
+            { id: 14, cat: 'rayalaseema', te: 'గండికోట & బెలూం గుహలు', en: 'Gandikota Fort & Belum Caves', distTe: 'చారిత్రక గ్రామాలు', distEn: 'Heritage Villages' },
+
+            // Tirupati & Chittoor District (13)
+            { id: 15, cat: 'chittoor', te: 'తిరుమల శ్రీ వెంకటేశ్వర స్వామి', en: 'Tirumala Sri Venkateswara', distTe: 'తిరుమల కొండ', distEn: 'Tirumala Hills' },
+            { id: 16, cat: 'chittoor', te: 'తిరుపతి గోవిందరాజ స్వామి', en: 'Tirupati Govindaraja Swamy', distTe: 'తిరుపతి టౌన్', distEn: 'Tirupati Town' },
+            { id: 17, cat: 'chittoor', te: 'తిరుచానూరు పద్మావతి అమ్మవారు', en: 'Tiruchanur Padmavathi Temple', distTe: 'తిరుచానూరు గ్రామం', distEn: 'Tiruchanur Village' },
+            { id: 18, cat: 'chittoor', te: 'శ్రీకాళహస్తి వాయులింగేశ్వర స్వామి', en: 'Srikalahasti Vayulingeswara', distTe: 'శ్రీకాళహస్తి పట్టణం', distEn: 'Srikalahasti Town' },
+            { id: 19, cat: 'chittoor', te: 'కాణిపాకం వరసిద్ధి వినాయక', en: 'Kanipakam Varasiddhi Vinayaka', distTe: 'కాణిపాకం గ్రామం, చిత్తూరు', distEn: 'Kanipakam Village, Chittoor' },
+            { id: 20, cat: 'chittoor', te: 'శ్రీనివాస మంగాపురం ఆలయం', en: 'Srinivasa Mangapuram Village', distTe: 'తిరుపతి దగ్గర', distEn: 'Near Tirupati' },
+            { id: 21, cat: 'chittoor', te: 'కపిల తీర్థం కపిలేశ్వర స్వామి', en: 'Kapila Theertham Temple', distTe: 'తిరుపతి కొండ కింద', distEn: 'Tirupati Foothills' },
+            { id: 22, cat: 'chittoor', te: 'అప్పలాయగుంట ప్రసన్న వెంకటేశ్వర', en: 'Appalayagunta Village Temple', distTe: 'చిత్తూరు మార్గం', distEn: 'Chittoor Route' },
+            { id: 23, cat: 'chittoor', te: 'నారాయణవనం కళ్యాణ వెంకటేశ్వర', en: 'Narayanavanam Sacred Village', distTe: 'చిత్తూరు జిల్లా', distEn: 'Chittoor Dist' },
+            { id: 24, cat: 'chittoor', te: 'నాగాలాపురం వేదనారాయణ స్వామి', en: 'Nagalapuram Vedanarayana', distTe: 'నాగాలాపురం గ్రామం', distEn: 'Nagalapuram Village' },
+            { id: 25, cat: 'chittoor', te: 'గుడిమల్లం పరశురామేశ్వర ఆలయం', en: 'Gudimallam Parasurameswara', distTe: 'గుడిమల్లం గ్రామం, చిత్తూరు', distEn: 'Gudimallam Village' },
+            { id: 26, cat: 'chittoor', te: 'బోయకొండ గంగమ్మ తల్లి ఆలయం', en: 'Boyakonda Gangamma Temple', distTe: 'చౌడేపల్లి, చిత్తూరు', distEn: 'Chowdepalle, Chittoor' },
+            { id: 27, cat: 'chittoor', te: 'హార్స్లీ హిల్స్ & తలకోన జలపాతం', en: 'Horsley Hills & Talakona', distTe: 'మదనపల్లె, చిత్తూరు', distEn: 'Madanapalle, Chittoor' },
+
+            // Nellore & Coastal AP (11)
+            { id: 28, cat: 'nellore', te: 'పెంచలకోన పెనుశిల నరసింహస్వామి', en: 'Penchalakona Narasimha Kshetram', distTe: 'రాపూరు, నెల్లూరు జిల్లా', distEn: 'Rapur, Nellore Dist' },
+            { id: 29, cat: 'nellore', te: 'జొన్నవాడ కామాక్షి తాయి ఆలయం', en: 'Jonnawada Kamakshi Village', distTe: 'బుచ్చిరెడ్డిపాలెం, నెల్లూరు', distEn: 'Jonnawada, Nellore Dist' },
+            { id: 30, cat: 'nellore', te: 'నెల్లూరు తల్పగిరి రంగనాథ స్వామి', en: 'Nellore Talpagiri Ranganatha', distTe: 'పెన్నా నది తీరం, నెల్లూరు', distEn: 'Penna River, Nellore' },
+            { id: 31, cat: 'nellore', te: 'నరసింహ కొండ వేదగిరి ఆలయం', en: 'Narasimha Konda Vedagiri', distTe: 'నెల్లూరు జిల్లా', distEn: 'Nellore Dist' },
+            { id: 32, cat: 'nellore', te: 'సూళ్లూరుపేట చెంగాళమ్మ పరమేశ్వరి', en: 'Sullurpeta Chengalamma Temple', distTe: 'సూళ్లూరుపేట, నెల్లూరు', distEn: 'Sullurpeta, Nellore' },
+            { id: 33, cat: 'nellore', te: 'విజయవాడ ఇంద్రకీలాద్రి కనకదుర్గమ్మ', en: 'Vijayawada Kanaka Durga Temple', distTe: 'కృష్ణా నది తీరం', distEn: 'Vijayawada City' },
+            { id: 34, cat: 'nellore', te: 'అమరావతి అమరలింగేశ్వర స్వామి', en: 'Amaravati Amaralingeswara', distTe: 'అమరావతి గ్రామం, గుంటూరు', distEn: 'Amaravati Village' },
+            { id: 35, cat: 'nellore', te: 'మంగళగిరి పానకాల లక్ష్మీనరసింహ', en: 'Mangalagiri Panakala Swamy', distTe: 'మంగళగిరి పట్టణం', distEn: 'Mangalagiri Town' },
+            { id: 36, cat: 'nellore', te: 'ద్వారకా తిరుమల (చిన్న తిరుపతి)', en: 'Dwaraka Tirumala Village', distTe: 'ఏలూరు జిల్లా', distEn: 'Chinna Tirupati, Eluru' },
+            { id: 37, cat: 'nellore', te: 'అన్నవరం సత్యనారాయణ స్వామి', en: 'Annavaram Satyanarayana Swamy', distTe: 'అన్నవరం గ్రామం, రత్నగిరి', distEn: 'Annavaram Village' },
+            { id: 38, cat: 'nellore', te: 'సింహాచలం వరాహ లక్ష్మీనరసింహ', en: 'Simhachalam Varaha Narasimha', distTe: 'విశాఖపట్నం', distEn: 'Visakhapatnam' },
+
+            // Tamil Nadu & Kerala Main Places (14)
+            { id: 39, cat: 'tnkerala', te: 'అరుణాచలం అరుణాచలేశ్వర (గిరిప్రదక్షిణ)', en: 'Arunachalam Tiruvannamalai', distTe: 'తిరువణ్ణామలై, తమిళనాడు', distEn: 'Tiruvannamalai, TN' },
+            { id: 40, cat: 'tnkerala', te: 'వెల్లూరు శ్రీపురం గోల్డెన్ టెంపుల్', en: 'Vellore Sripuram Golden Temple', distTe: 'మలైకోడి గ్రామం, తమిళనాడు', distEn: 'Malaikodi Village, TN' },
+            { id: 41, cat: 'tnkerala', te: 'కాంచీపురం కామాక్షి & వరదరాజ పెరుమాళ్', en: 'Kanchipuram Kamakshi & Perumal', distTe: 'కాంచీపురం, తమిళనాడు', distEn: 'Kanchipuram, TN' },
+            { id: 42, cat: 'tnkerala', te: 'రామేశ్వరం రామనాథస్వామి జ్యోతిర్లింగం', en: 'Rameswaram Ramanathaswamy', distTe: 'రామేశ్వరం ద్వీపం, తమిళనాడు', distEn: 'Rameswaram Island, TN' },
+            { id: 43, cat: 'tnkerala', te: 'మధురై మీనాక్షి సుందరేశ్వర ఆలయం', en: 'Madurai Meenakshi Amman Temple', distTe: 'మధురై, తమిళనాడు', distEn: 'Madurai City, TN' },
+            { id: 44, cat: 'tnkerala', te: 'శ్రీరంగం రంగనాథస్వామి దివ్యదేశం', en: 'Srirangam Ranganathaswamy', distTe: 'తిరుచ్చి, తమిళనాడు', distEn: 'Trichy, Tamil Nadu' },
+            { id: 45, cat: 'tnkerala', te: 'కన్యాకుమారి భగవతి అమ్మన్ & త్రివేణి సంగమం', en: 'Kanyakumari Triveni Sangamam', distTe: 'కన్యాకుమారి, తమిళనాడు', distEn: 'Kanyakumari, TN' },
+            { id: 46, cat: 'tnkerala', te: 'పళని దండాయుధపాణి సుబ్రహ్మణ్య స్వామి', en: 'Palani Dandayudhapani Murugan', distTe: 'పళని కొండ, తమిళనాడు', distEn: 'Palani Hills, TN' },
+            { id: 47, cat: 'tnkerala', te: 'చిదంబరం నటరాజ స్వామి ఆకాశలింగం', en: 'Chidambaram Nataraja Temple', distTe: 'చిదంబరం, తమిళనాడు', distEn: 'Chidambaram, TN' },
+            { id: 48, cat: 'tnkerala', te: 'తంజావూరు బృహదీశ్వర ఆలయం', en: 'Thanjavur Brihadeeswara Temple', distTe: 'తంజావూరు, తమిళనాడు', distEn: 'Thanjavur, TN' },
+            { id: 49, cat: 'tnkerala', te: 'శబరిమల శ్రీ ధర్మశాస్త అయ్యప్ప స్వామి', en: 'Sabarimala Sree Dharma Sastha', distTe: 'పతనంతిట్ట, కేరళ', distEn: 'Pathanamthitta, Kerala' },
+            { id: 50, cat: 'tnkerala', te: 'గురువాయూర్ శ్రీకృష్ణ ఆలయం', en: 'Guruvayur Sri Krishna Temple', distTe: 'త్రిసూర్, కేరళ', distEn: 'Thrissur, Kerala' },
+            { id: 51, cat: 'tnkerala', te: 'తిరువనంతపురం అనంత పద్మనాభస్వామి', en: 'Trivandrum Padmanabhaswamy', distTe: 'తిరువనంతపురం, కేరళ', distEn: 'Trivandrum, Kerala' },
+            { id: 52, cat: 'tnkerala', te: 'మున్నార్ & అలెప్పీ కేరళ ప్రకృతి యాత్ర', en: 'Munnar Hills & Alleppey Backwaters', distTe: 'కేరళ ప్రకృతి గ్రామాలు', distEn: 'Kerala Nature Villages' }
+        ];
+
+        function getCounts(bus) {
+            const all = [...bus.berths, ...bus.seats];
+            return {
+                available: all.filter(s => s.status === 'available').length,
+                pending: all.filter(s => s.status === 'pending').length,
+                booked: all.filter(s => s.status === 'booked').length,
+                total: all.length
+            };
+        }
+
+        function renderPickupDropdown() {
+            const selectEl = document.getElementById('input-pickup-point');
+            if (!selectEl) return;
+            const currentIdx = selectEl.selectedIndex >= 0 ? selectEl.selectedIndex : 0;
+            selectEl.innerHTML = pickupVillages.map((v, idx) => {
+                const label = currentLang === 'te' ? `${v.te} (${v.en})` : `${v.en} (${v.te})`;
+                return `<option value="${idx}" ${idx === currentIdx ? 'selected' : ''}>${label}</option>`;
+            }).join('');
+        }
+
+        function renderBusGrid() {
+            const container = document.getElementById('bus-grid-container');
+            container.innerHTML = busesData.map(bus => {
+                const counts = getCounts(bus);
+                const isSelected = bus.id === selectedBusId;
+                const posLabel = currentLang === 'te' ? bus.gridPosTe : bus.gridPosEn;
+                const title = currentLang === 'te' ? bus.nameTe : bus.nameEn;
+                const dateStr = currentLang === 'te' ? bus.dateTe : bus.dateEn;
+                const routeStr = currentLang === 'te' ? bus.routeTe : bus.routeEn;
+                const selectBtnText = currentLang === 'te'
+                    ? (isSelected ? '✓ ప్రస్తుతం ఎంచుకున్న బస్సు (సీట్లు కింద చూడండి)' : 'సెలెక్ట్ & సీట్లు చూడండి →')
+                    : (isSelected ? '✓ Currently Selected Bus (View Seats Below)' : 'Select & View Seats →');
+
+                return `
+                    <div class="rounded-xl p-3.5 transition border ${isSelected ? 'bg-amber-50/70 border-orange-500 ring-2 ring-orange-500/20 shadow-sm' : 'bg-white border-slate-200 hover:border-amber-400'} flex flex-col justify-between gap-2.5">
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-robotic px-2 py-0.5 rounded bg-slate-900 text-amber-300 text-[10px] font-bold">${posLabel}</span>
+                                <span class="font-robotic text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                                    ${currentLang === 'te' ? 'ఖాళీ:' : 'Avail:'} ${counts.available} | ${currentLang === 'te' ? 'బుక్:' : 'Booked:'} ${counts.booked}
+                                </span>
+                            </div>
+                            <h4 class="font-heading text-xs sm:text-sm font-bold text-slate-900 leading-snug">${title}</h4>
+                            <p class="text-[11px] text-orange-800 font-semibold">${dateStr}</p>
+                            <p class="text-[10px] text-slate-500">${routeStr}</p>
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                            <div class="text-[10px] text-slate-600">
+                                <span class="font-bold text-slate-900">${currentLang === 'te' ? 'సీటు:' : 'Seat:'} <span class="font-robotic">₹${bus.seatPrice}</span></span> •
+                                <span class="font-bold text-indigo-700">${currentLang === 'te' ? 'బెర్త్:' : 'Berth:'} <span class="font-robotic">₹${bus.berthPrice}</span></span>
+                            </div>
+                            <button onclick="selectBus('${bus.id}')" class="font-robotic px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${isSelected ? 'bg-orange-600 text-white' : 'bg-slate-900 text-white hover:bg-orange-600'}">
+                                ${selectBtnText}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function selectBus(busId) {
+            selectedBusId = busId;
+            renderAll();
+            document.getElementById('booking-engine').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function renderBookingEngine() {
+            const bus = busesData.find(b => b.id === selectedBusId);
+            if (!bus) return;
+
+            const counts = getCounts(bus);
+            document.getElementById('active-bus-code').textContent = currentLang === 'te' ? bus.gridPosTe : bus.gridPosEn;
+            document.getElementById('active-bus-date').textContent = currentLang === 'te' ? bus.dateTe : bus.dateEn;
+            document.getElementById('active-bus-title').textContent = currentLang === 'te' ? bus.nameTe : bus.nameEn;
+
+            document.getElementById('count-available').textContent = counts.available;
+            document.getElementById('count-pending').textContent = counts.pending;
+            document.getElementById('count-booked').textContent = counts.booked;
+
+            document.getElementById('berth-price-tag').textContent = `${currentLang === 'te' ? 'బెర్త్ చార్జీ:' : 'Berth Fare:'} ₹${bus.berthPrice}`;
+            document.getElementById('seat-price-tag').textContent = `${currentLang === 'te' ? 'సీటు చార్జీ:' : 'Seat Fare:'} ₹${bus.seatPrice}`;
+
+            // Render Sleeper Berths (B1 - B12)
+            const berthsContainer = document.getElementById('berths-container');
+            berthsContainer.innerHTML = bus.berths.map((b, idx) => {
+                const isSelected = bus.selectedList.includes(b.code);
+                const deckLabel = idx % 2 === 0 ? (currentLang === 'te' ? 'లోయర్' : 'LOWER') : (currentLang === 'te' ? 'అప్పర్' : 'UPPER');
+                return buildSeatOrBerthButton(b, isSelected, true, deckLabel);
+            }).join('');
+
+            // Render Push-Back Seats (S1 - S20)
+            const seatsContainer = document.getElementById('seats-container');
+            seatsContainer.innerHTML = bus.seats.map(s => {
+                const isSelected = bus.selectedList.includes(s.code);
+                return buildSeatOrBerthButton(s, isSelected, false, '');
+            }).join('');
+
+            // Update Selected Summary & Total Fare
+            const selectedDisplay = document.getElementById('selected-seats-display');
+            const fareDisplay = document.getElementById('selected-fare-display');
+            if (bus.selectedList.length === 0) {
+                selectedDisplay.textContent = i18n[currentLang].noneSelected;
+                fareDisplay.textContent = '₹0';
+            } else {
+                selectedDisplay.textContent = bus.selectedList.join(', ');
+                let total = 0;
+                bus.selectedList.forEach(code => {
+                    if (code.startsWith('B')) total += bus.berthPrice;
+                    else total += bus.seatPrice;
+                });
+                fareDisplay.textContent = `₹${total.toLocaleString('en-IN')}`;
+            }
+        }
+
+        function buildSeatOrBerthButton(item, isSelected, isBerth, subLabel) {
+            let styleClasses = '';
+            let statusBadge = '';
+            let disabledAttr = '';
+            const passengerName = currentLang === 'te' ? (item.passengerTe || item.passengerEn) : (item.passengerEn || item.passengerTe);
+
+            if (item.status === 'booked') {
+                styleClasses = 'bg-rose-50 border-2 border-rose-300 text-rose-900 cursor-not-allowed opacity-90';
+                statusBadge = `<div class="text-[9px] truncate font-semibold text-rose-700">${passengerName || 'Booked'}</div>`;
+                disabledAttr = 'disabled';
+            } else if (item.status === 'pending') {
+                styleClasses = 'bg-amber-50 border-2 border-amber-500 text-amber-900 pulse-amber cursor-not-allowed';
+                statusBadge = `<div class="text-[9px] truncate font-bold text-amber-800">⏳ ${passengerName}</div>`;
+                disabledAttr = 'disabled';
+            } else if (isSelected) {
+                styleClasses = 'bg-orange-600 border-2 border-orange-700 text-white shadow-sm';
+                statusBadge = `<div class="text-[9px] font-bold text-orange-100">${currentLang === 'te' ? '✓ సెలెక్ట్' : '✓ Selected'}</div>`;
+            } else {
+                styleClasses = 'bg-white border-2 border-emerald-500/80 hover:border-orange-500 text-slate-800';
+                statusBadge = `<div class="text-[9px] text-emerald-700 font-semibold">${currentLang === 'te' ? 'ఖాళీ' : 'Available'}</div>`;
+            }
+
+            const heightClass = isBerth ? 'p-2 min-h-[52px]' : 'p-1.5 min-h-[44px]';
+
+            return `
+                <button type="button" ${disabledAttr} onclick="toggleSeatSelection('${item.code}')" class="seat-item rounded-lg ${heightClass} ${styleClasses} flex flex-col justify-between text-left">
+                    <div class="flex items-center justify-between w-full">
+                        <span class="font-robotic text-[11px] font-extrabold">${item.code}</span>
+                        ${isBerth ? `<span class="font-robotic text-[8px] px-1 rounded bg-black/5 font-bold">${subLabel}</span>` : `<span class="text-[9px]">💺</span>`}
+                    </div>
+                    ${statusBadge}
+                </button>
+            `;
+        }
+
+        function toggleSeatSelection(code) {
+            const bus = busesData.find(b => b.id === selectedBusId);
+            if (!bus) return;
+            const idx = bus.selectedList.indexOf(code);
+            if (idx > -1) {
+                bus.selectedList.splice(idx, 1);
+            } else {
+                bus.selectedList.push(code);
+            }
+            hideBookingMsg();
+            renderBookingEngine();
+        }
+
+        function fillSampleName(name) {
+            document.getElementById('input-passenger-name').value = name;
+        }
+
+        function selectPaymentMethod(mode) {
+            selectedPaymentMethod = mode;
+            document.querySelectorAll('.pay-mode-btn').forEach(btn => {
+                btn.className = 'pay-mode-btn px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 font-semibold text-[10px] text-center';
+            });
+            if (mode.includes('UPI')) {
+                document.getElementById('pay-btn-upi').className = 'pay-mode-btn px-2 py-1.5 rounded-lg border-2 border-orange-600 bg-orange-50 text-orange-900 font-bold text-[10px] text-center';
+            } else if (mode.includes('QR')) {
+                document.getElementById('pay-btn-qr').className = 'pay-mode-btn px-2 py-1.5 rounded-lg border-2 border-orange-600 bg-orange-50 text-orange-900 font-bold text-[10px] text-center';
+            } else {
+                document.getElementById('pay-btn-adv').className = 'pay-mode-btn px-2 py-1.5 rounded-lg border-2 border-orange-600 bg-orange-50 text-orange-900 font-bold text-[10px] text-center';
+            }
+        }
+
+        function showBookingMsg(text, isError = false) {
+            const box = document.getElementById('booking-status-msg');
+            box.classList.remove('hidden', 'bg-rose-100', 'text-rose-800', 'bg-emerald-100', 'text-emerald-900');
+            if (isError) {
+                box.classList.add('bg-rose-100', 'text-rose-800');
+            } else {
+                box.classList.add('bg-emerald-100', 'text-emerald-900');
+            }
+            box.textContent = text;
+        }
+
+        function hideBookingMsg() {
+            document.getElementById('booking-status-msg').classList.add('hidden');
+        }
+
+        function submitSeatBooking() {
+            const bus = busesData.find(b => b.id === selectedBusId);
+            if (!bus || bus.selectedList.length === 0) {
+                const msg = currentLang === 'te'
+                    ? 'దయచేసి ముందుగా కనీసం ఒక సీటు లేదా బెర్త్‌పై క్లిక్ చేసి ఎంచుకోండి!'
+                    : 'Please select at least one Seat or Berth on the bus layout first!';
+                showBookingMsg(msg, true);
+                return;
+            }
+
+            const rawName = document.getElementById('input-passenger-name').value.trim();
+            const passengerEn = rawName || 'Ramakrishna (Pilgrim)';
+            const passengerTe = rawName || 'రామకృష్ణ (యాత్రికుడు)';
+            const phone = document.getElementById('input-passenger-phone').value.trim() || '9848012345';
+            const pickupIdx = parseInt(document.getElementById('input-pickup-point').value, 10) || 0;
+            const chosenVillage = pickupVillages[pickupIdx] || pickupVillages[0];
+
+            const bookedCodes = [...bus.selectedList];
+            bookedCodes.forEach(code => {
+                const target = [...bus.berths, ...bus.seats].find(item => item.code === code);
+                if (target && target.status === 'available') {
+                    target.status = 'pending';
+                    target.passengerEn = passengerEn;
+                    target.passengerTe = passengerTe;
+                    target.phone = phone;
+                    target.pickupEn = chosenVillage.en;
+                    target.pickupTe = chosenVillage.te;
+                    target.payMode = selectedPaymentMethod;
+                }
+            });
+
+            bus.selectedList = [];
+            const successText = currentLang === 'te'
+                ? `✓ ఆన్‌లైన్ పేమెంట్ (${selectedPaymentMethod}) పూర్తయింది! సీట్లు (${bookedCodes.join(', ')}) అడ్మిన్ ఆమోదం కోసం పంపబడ్డాయి. కింద ఉన్న అడ్మిన్ ప్యానెల్‌లో 'Approve' లేదా 'Reject' చేసి పరీక్షించండి.`
+                : `✓ Online Payment (${selectedPaymentMethod}) received! Seats (${bookedCodes.join(', ')}) are now Pending Admin Approval. Use the Admin Panel below to Approve or Reject.`;
+
+            showBookingMsg(successText, false);
+            renderAll();
+        }
+
+        function renderAdminPanel() {
+            const listEl = document.getElementById('admin-requests-list');
+            const pendingItems = [];
+
+            busesData.forEach(bus => {
+                [...bus.berths, ...bus.seats].forEach(item => {
+                    if (item.status === 'pending') {
+                        pendingItems.push({
+                            busId: bus.id,
+                            busName: currentLang === 'te' ? bus.nameTe : bus.nameEn,
+                            code: item.code,
+                            typeLabel: item.type === 'berth' ? (currentLang === 'te' ? 'స్లీపర్ బెర్త్' : 'Sleeper Berth') : (currentLang === 'te' ? 'సీటు' : 'Seater'),
+                            passenger: currentLang === 'te' ? (item.passengerTe || item.passengerEn) : (item.passengerEn || item.passengerTe),
+                            phone: item.phone,
+                            pickup: currentLang === 'te' ? (item.pickupTe || item.pickupEn) : (item.pickupEn || item.pickupTe),
+                            payMode: item.payMode || 'UPI Online'
+                        });
+                    }
+                });
+            });
+
+            document.getElementById('header-pending-badge').textContent = pendingItems.length;
+
+            if (pendingItems.length === 0) {
+                listEl.innerHTML = `
+                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-[11px] text-slate-300 flex items-center justify-between">
+                        <span>${currentLang === 'te' ? 'ప్రస్తుతం పెండింగ్ సీటు రిక్వెస్టులు ఏవీ లేవు. పైన ఏదైనా సీటు సెలెక్ట్ చేసి బుక్ నౌ నొక్కండి!' : 'No pending seat requests right now. Select any seat above and click Pay & Book to test Admin Approval!'}</span>
+                        <span class="font-robotic text-emerald-400 font-bold">ALL CLEAR ✓</span>
+                    </div>
+                `;
+                return;
+            }
+
+            listEl.innerHTML = pendingItems.map(req => `
+                <div class="p-3 rounded-lg bg-slate-800 border border-amber-500/40 flex flex-wrap items-center justify-between gap-2.5">
+                    <div class="space-y-0.5">
+                        <div class="flex items-center gap-2">
+                            <span class="font-robotic px-2 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-extrabold">${req.code} (${req.typeLabel})</span>
+                            <span class="text-xs font-bold text-white">${req.passenger}</span>
+                            <span class="font-robotic text-[10px] text-slate-400">📞 ${req.phone}</span>
+                        </div>
+                        <div class="text-[10px] text-slate-300">
+                            <span>🚌 ${req.busName}</span> •
+                            <span class="text-amber-300">📍 ${req.pickup}</span> •
+                            <span class="text-emerald-300">💳 ${req.payMode}</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="adminDecision('${req.busId}', '${req.code}', 'approve')" class="font-robotic px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-[11px] transition">
+                            ✓ ${currentLang === 'te' ? 'అప్రూవ్ (Approve Seat)' : 'Approve Seat'}
+                        </button>
+                        <button onclick="adminDecision('${req.busId}', '${req.code}', 'reject')" class="font-robotic px-3 py-1 rounded-lg bg-rose-500 hover:bg-rose-400 text-white font-extrabold text-[11px] transition">
+                            ✕ ${currentLang === 'te' ? 'రిజెక్ట్ (Reject & Release)' : 'Reject & Release'}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function adminDecision(busId, seatCode, action) {
+            const bus = busesData.find(b => b.id === busId);
+            if (!bus) return;
+            const target = [...bus.berths, ...bus.seats].find(i => i.code === seatCode);
+            if (!target) return;
+
+            const pName = currentLang === 'te' ? (target.passengerTe || target.passengerEn) : (target.passengerEn || target.passengerTe);
+
+            if (action === 'approve') {
+                target.status = 'booked';
+                const msg = currentLang === 'te'
+                    ? `✓ అడ్మిన్ ఆమోదించారు: సీటు/బెర్త్ ${seatCode} (${pName}) విజయవంతంగా కన్ఫర్మ్ చేయబడింది!`
+                    : `✓ Admin Approved: Seat/Berth ${seatCode} (${pName}) is now Confirmed Booked!`;
+                showBookingMsg(msg, false);
+            } else {
+                target.status = 'available';
+                target.passengerEn = '';
+                target.passengerTe = '';
+                target.phone = '';
+                target.pickupEn = '';
+                target.pickupTe = '';
+                const msg = currentLang === 'te'
+                    ? `✕ అడ్మిన్ రిజెక్ట్ చేశారు: ${pName} గారి సీటు (${seatCode}) క్యాన్సిల్ చేయబడి మళ్ళీ ఖాళీ (Available) అయింది.`
+                    : `✕ Admin Rejected: Seat ${seatCode} (${pName}) has been cancelled and released back to Available.`;
+                showBookingMsg(msg, true);
+            }
+
+            selectedBusId = busId;
+            renderAll();
+        }
+
+        function setVillageNameLang(mode) {
+            villageNameLangMode = mode;
+            ['auto', 'en', 'te', 'both'].forEach(m => {
+                const btn = document.getElementById(`vlang-${m}`);
+                if (!btn) return;
+                if (m === mode) {
+                    btn.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-orange-600 text-white transition';
+                } else {
+                    btn.className = 'px-2 py-0.5 rounded text-[10px] font-bold text-slate-700 hover:bg-white transition';
+                }
+            });
+            renderPlacesGrid();
+        }
+
+        function filterPlaces(cat) {
+            activePlaceCategory = cat;
+            document.querySelectorAll('.place-tab').forEach(btn => {
+                btn.className = 'place-tab font-slab px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-amber-50 font-semibold text-[11px] transition';
+            });
+            const activeBtn = document.getElementById(`tab-${cat}`);
+            if (activeBtn) {
+                activeBtn.className = 'place-tab font-slab px-2.5 py-1 rounded-lg bg-orange-600 text-white font-bold text-[11px] transition';
+            }
+            renderPlacesGrid();
+        }
+
+        function renderPlacesGrid() {
+            const container = document.getElementById('places-grid');
+            const filtered = activePlaceCategory === 'all'
+                ? sacredPlaces
+                : sacredPlaces.filter(p => p.cat === activePlaceCategory);
+
+            const effectiveLang = villageNameLangMode === 'auto' ? currentLang : villageNameLangMode;
+
+            container.innerHTML = filtered.map(place => {
+                let primaryName = '';
+                let secondaryDist = '';
+
+                if (effectiveLang === 'both') {
+                    primaryName = `${place.en} • ${place.te}`;
+                    secondaryDist = `${place.distEn} (${place.distTe})`;
+                } else if (effectiveLang === 'te') {
+                    primaryName = place.te;
+                    secondaryDist = place.distTe;
+                } else {
+                    primaryName = place.en;
+                    secondaryDist = place.distEn;
+                }
+
+                return `
+                    <div class="p-2 rounded-lg bg-white border border-slate-200/80 hover:border-amber-400 transition flex items-center gap-2">
+                        <span class="font-robotic w-5 h-5 rounded-md bg-amber-100 text-orange-800 text-[10px] font-bold flex items-center justify-center shrink-0">${place.id}</span>
+                        <div class="min-w-0">
+                            <div class="text-[11px] font-bold text-slate-800 truncate" title="${primaryName}">${primaryName}</div>
+                            <div class="text-[9px] text-slate-400 font-semibold truncate">🛕 ${secondaryDist}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.body.classList.remove('lang-te', 'lang-en');
+            document.body.classList.add(lang === 'te' ? 'lang-te' : 'lang-en');
+
+            const btnTe = document.getElementById('btn-lang-te');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (lang === 'te') {
+                btnTe.className = 'px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-orange-500 text-white shadow-sm transition';
+                btnEn.className = 'font-robotic px-2.5 py-0.5 rounded-md text-[11px] font-bold text-amber-200 hover:text-white transition';
+            } else {
+                btnEn.className = 'font-robotic px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-orange-500 text-white shadow-sm transition';
+                btnTe.className = 'px-2.5 py-0.5 rounded-md text-[11px] font-bold text-amber-200 hover:text-white transition';
+            }
+
+            // Update all static data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+
+            // Update input placeholders dynamically
+            const nameInput = document.getElementById('input-passenger-name');
+            if (nameInput) {
+                nameInput.placeholder = lang === 'te' ? 'ఉదా: వెంకటేశ్వర్లు / Venkateswarlu' : 'e.g. Venkateswarlu / వెంకటేశ్వర్లు';
+            }
+            const enqName = document.getElementById('enq-name');
+            if (enqName) {
+                enqName.placeholder = lang === 'te' ? 'మీ పేరు (Your Name)' : 'Your Name (మీ పేరు)';
+            }
+            const enqVillage = document.getElementById('enq-village');
+            if (enqVillage) {
+                enqVillage.placeholder = lang === 'te' ? 'మీ గ్రామం / పట్టణం (ఉదా: ఆళ్లగడ్డ / నంద్యాల)' : 'Your Village / Town (e.g. Allagadda / Nandyal)';
+            }
+
+            renderAll();
+        }
+
+        function sendDummyEnquiry() {
+            const name = document.getElementById('enq-name').value.trim() || (currentLang === 'te' ? 'యాత్రికుడు' : 'Pilgrim');
+            const village = document.getElementById('enq-village').value.trim() || (currentLang === 'te' ? 'నంద్యాల' : 'Nandyal');
+            const fb = document.getElementById('enq-feedback');
+            fb.classList.remove('hidden');
+            fb.textContent = currentLang === 'te'
+                ? `✓ నమస్కారం ${name} గారు (${village}), మీ వివరాలు శ్రీరాములు గారికి చేరాయి! త్వరలో కాల్ చేస్తాము.`
+                : `✓ Thank you ${name} (${village}), Sriramulu will call you back shortly!`;
+        }
+
+        function renderAll() {
+            renderPickupDropdown();
+            renderBusGrid();
+            renderBookingEngine();
+            renderAdminPanel();
+            renderPlacesGrid();
+        }
+
+        window.onload = function () {
+            setLanguage('en');
+        };
+    </script>
+</body>
+</html>
